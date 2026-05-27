@@ -126,7 +126,7 @@
       <p><b>MacOS:</b></p>
       <p>Apple Silicon version </p>
         <ul>
-          <li><a href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-Beta3/GenviumV3-signed.pkg" download>Beta Version</a></li>
+          <li><a href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-Beta3/GenviumV3-signed.pkg" download onclick="trackDownload('macos')">Beta Version</a></li>
         </ul>
       <p>Intel version - Coming soon</p>
     </div>
@@ -159,6 +159,14 @@
   </div>
 
 </div>
+
+<script>
+function trackDownload(os) {
+  gtag('event', 'download', {
+    os: os
+  });
+}
+</script>
 
 <script>
   function showSection(id) {
