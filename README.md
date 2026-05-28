@@ -58,12 +58,10 @@ Linux: Genvium.AppImage
 
 ## Tech Stack
 
-Example section (customize as needed):
-
-* Electron
-* React
-* TypeScript
-* Node.js
+* JavaFX/Spring
+* HTML
+* CSS
+* Java
 * SQLite / PostgreSQL
 
 ---
@@ -78,17 +76,6 @@ Planned features include:
 * Investor CRM features
 * Application autofill assistance
 * Analytics dashboard
-
----
-
-## Contributing
-
-Contributions are welcome.
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a pull request
 
 ---
 
