@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Genvium</title>
-  
+  <title>Genvium | Startup Funding Intelligence</title>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B9XYFVLCV"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -14,170 +15,831 @@
 
     gtag('config', 'G-3B9XYFVLCV');
   </script>
-  
+
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #02A9EA;
-      color: #ffffff;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #F4F7FA;
+      color: #111827;
+      line-height: 1.6;
     }
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E5E7EB;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background: #0081B3;
-      position: sticky;
-      top: 0;
+
+      padding: 18px 40px;
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0F172A;
     }
 
     nav a {
-      margin-left: 20px;
-      color: #ffffff;
+      margin-left: 26px;
       text-decoration: none;
-      font-size: 14px;
-      opacity: 0.8;
+      color: #374151;
+      font-size: 15px;
+      transition: 0.2s ease;
       cursor: pointer;
     }
 
     nav a:hover {
-      opacity: 1;
+      color: #2563EB;
     }
 
-    .container {
-      padding: 80px 40px;
-      max-width: 900px;
+    .hero {
+      padding: 120px 40px 80px;
+      text-align: center;
+      max-width: 1000px;
       margin: auto;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #DBEAFE;
+      color: #1D4ED8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
     }
 
-    p {
-      font-size: 16px;
-      opacity: 0.85;
-      line-height: 1.6;
+    .hero h1 {
+      font-size: 72px;
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
+      color: #0F172A;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 780px;
+      margin: auto;
+      color: #4B5563;
+    }
+
+    .hero-actions {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #2563EB;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: #1D4ED8;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid #CBD5E1;
+      color: #111827;
+      padding: 14px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      background: white;
+      transition: 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: #94A3B8;
+      background: #F8FAFC;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      font-size: 14px;
+      color: #6B7280;
     }
 
     .section {
+      padding: 90px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 52px;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      color: #0F172A;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: auto auto 70px;
+      font-size: 18px;
+      color: #4B5563;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid #E5E7EB;
+      transition: 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 14px;
+      font-size: 24px;
+      color: #111827;
+    }
+
+    .feature-card p {
+      color: #4B5563;
+      font-size: 15px;
+    }
+
+    .stats {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #2563EB, #1E40AF);
+      color: white;
+      border-radius: 20px;
+      padding: 34px;
+    }
+
+    .stat-card h2 {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .stat-card p {
+      color: rgba(255,255,255,0.88);
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .workflow-step {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #DBEAFE;
+      color: #1D4ED8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .workflow-step h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .cta-section {
+      margin-top: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      color: white;
+      border-radius: 30px;
+      padding: 80px 40px;
+    }
+
+    .cta-section h2 {
+      font-size: 54px;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .cta-section p {
+      max-width: 700px;
+      margin: auto;
+      color: rgba(255,255,255,0.8);
+      font-size: 18px;
+    }
+
+    .cta-buttons {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .coming-soon {
+      margin-top: 60px;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 20px;
+      padding: 36px;
+    }
+
+    .coming-soon h3 {
+      margin-bottom: 14px;
+      color: #1E3A8A;
+      font-size: 28px;
+    }
+
+    .coming-soon p {
+      color: #334155;
+    }
+
+    .panel {
       display: none;
+      animation: fade 0.3s ease;
     }
 
     .active {
       display: block;
     }
 
-    .card {
-      background: #0081B3;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .download-card {
+      background: white;
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid #E5E7EB;
+      margin-bottom: 24px;
+    }
+
+    .download-card h3 {
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+
+    .download-card a {
+      color: #2563EB;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .download-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 80px;
+      background: #0F172A;
+      color: white;
+      padding: 70px 40px 40px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 50px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .section-title {
+        font-size: 38px;
+      }
+
+      .cta-section h2 {
+        font-size: 40px;
+      }
+
     }
   </style>
 </head>
+
 <body>
 
 <header>
+
   <div class="logo">Genvium</div>
+
   <nav>
     <a onclick="showSection('home')">Home</a>
     <a onclick="showSection('install')">Install</a>
     <a onclick="showSection('web')">Web</a>
     <a onclick="showSection('contact')">Contact</a>
   </nav>
+
 </header>
 
-<div class="container">
+<!-- HOME -->
+<div id="home" class="panel active">
 
-  <!-- HOME -->
-  <div id="home" class="section active">
-    <h1>Funding Made Simple for Startups</h1>
+  <section class="hero">
+
+    <div class="hero-badge">
+      Built for startups navigating modern funding
+    </div>
+
+    <h1>
+      Discover funding opportunities without drowning in spreadsheets
+    </h1>
+
     <p>
-      Genvium is a desktop platform designed to simplify how startups find and secure funding.
-      We aggregate funding opportunities into a centralized, searchable database with great filters,
-      making it easy to discover grants, competitions, and investment options tailored to your needs.
+      Genvium helps startups discover, organize, and track grants, tax credits,
+      accelerators, competitions, and investor opportunities from a centralized
+      searchable platform designed to reduce friction and help founders move faster.
     </p>
 
-    <p>
-      Beyond discovery, Genvium provides direct links to external applications and tools to help you
-      track your submissions, deadlines, and progress—all in one place. Whether you're just starting out
-      or scaling, Genvium streamlines the entire funding process so you can focus on building your business.
-    </p>
-    <p>Ready to get started?</p>
-    <p>
-      <a onclick="showSection('install')" style="font-weight: bold; text-decoration: underline; cursor: pointer;">Check out the Install section to Download Genvium</a>
-    </p>
-  </div>
+    <div class="hero-actions">
+      <a href="#cta" class="btn-primary">Start exploring opportunities</a>
+      <a onclick="showSection('install')" class="btn-secondary">Download desktop beta</a>
+    </div>
 
-  <!-- INSTALL -->
-  <div id="install" class="section">
-    <h1>Downloading Genvium</h1>
-    <div class="card">
-      <p><b>MacOS:</b></p>
-      <p>Apple Silicon version </p>
-        <ul>
-          <li><a href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-Beta3/GenviumV3-signed.pkg" download onclick="trackDownload('macos')">Beta Version</a></li>
-        </ul>
-      <p>Intel version - Coming soon</p>
+    <div class="hero-note">
+      Early launch • 15+ founders already using Genvium
     </div>
-    <div class="card">
-      <p><b>Windows:</b> Coming Soon</p>
-    </div>
-    <div class="card">
-      <p><b>Linux:</b> Coming Soon</p>
-    </div>
-  </div>
 
-  <!-- WEB -->
-  <div id="web" class="section">
-    <h1>Web Version</h1>
-    <div class="card">
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Built to make funding discovery practical
+    </h2>
+
+    <p class="section-subtitle">
+      We designed Genvium around one core problem:
+      founders spend too much time hunting for funding opportunities
+      and not enough time building their companies.
+    </p>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <h3>Centralized opportunity database</h3>
+        <p>
+          Search through grants, startup programs, tax incentives,
+          competitions, and investment opportunities from one organized platform
+          instead of jumping between dozens of disconnected websites.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Advanced filtering</h3>
+        <p>
+          Narrow opportunities down quickly using targeted filters
+          so your team spends less time searching and more time applying
+          to opportunities that actually fit.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Application tracking</h3>
+        <p>
+          Keep track of deadlines, submissions, statuses, and next steps
+          with a workflow built specifically for startup fundraising operations.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Recommended prospects dashboard</h3>
+        <p>
+          Surface relevant opportunities faster with a dashboard
+          that helps founders focus on funding sources aligned with their goals.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>External application links</h3>
+        <p>
+          Jump directly to official application pages and resources
+          without wasting time searching through outdated bookmarks or documents.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Built for momentum</h3>
+        <p>
+          Genvium is designed to reduce administrative drag so startups can
+          maintain momentum during fundraising and growth phases.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="stats">
+
+      <div class="stat-card">
+        <h2>15+</h2>
+        <p>
+          Early users exploring the platform during launch month
+        </p>
+      </div>
+
+      <div class="stat-card">
+        <h2>1</h2>
+        <p>
+          Central workspace for funding discovery and organization
+        </p>
+      </div>
+
+      <div class="stat-card">
+        <h2>0</h2>
+        <p>
+          Interest in making founders waste time on irrelevant opportunities
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">
+      How Genvium works
+    </h2>
+
+    <p class="section-subtitle">
+      The platform is intentionally simple.
+      We focus on reducing friction throughout the funding discovery process.
+    </p>
+
+    <div class="workflow">
+
+      <div class="workflow-step">
+        <div class="step-number">1</div>
+        <h3>Search intelligently</h3>
+        <p>
+          Browse opportunities through a structured database with
+          filtering tools that help narrow results quickly.
+        </p>
+      </div>
+
+      <div class="workflow-step">
+        <div class="step-number">2</div>
+        <h3>Organize your pipeline</h3>
+        <p>
+          Save relevant opportunities, monitor deadlines,
+          and maintain visibility across your applications.
+        </p>
+      </div>
+
+      <div class="workflow-step">
+        <div class="step-number">3</div>
+        <h3>Act faster</h3>
+        <p>
+          Move directly into external application portals
+          and keep momentum without losing context.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="coming-soon">
+      <h3>Upcoming features</h3>
       <p>
-        Genvium is available as a web tool <a href="https://genvium-app-506833711331.us-central1.run.app">(Lite Version)</a>.
+        We are currently exploring AI-powered consultation tools designed
+        to help startups better understand funding fit, opportunity readiness,
+        and application strategy.
       </p>
     </div>
-  </div>
 
-  <!-- CONTACT -->
-  <div id="contact" class="section">
-    <h1>Contact Us</h1>
-    <div class="card">
-      <p>If you need any assistance reach out to us at:</p>
-      <p><b>info@genvium.com</b></p>
+  </section>
+
+  <section class="section">
+
+    <div id="cta" class="cta-section">
+
+      <h2>
+        Spend less time searching.<br>
+        Spend more time building.
+      </h2>
+
+      <p>
+        Genvium was built by Auduvant Technologies to simplify
+        how startups approach funding discovery and opportunity management.
+      </p>
+
+      <div class="cta-buttons">
+        <a onclick="showSection('install')" class="btn-primary">
+          Download Genvium
+        </a>
+
+        <a onclick="showSection('web')" class="btn-secondary">
+          Explore web version
+        </a>
+      </div>
+
     </div>
-  </div>
+
+  </section>
 
 </div>
 
-<script>
-function trackDownload(os) {
-  gtag('event', 'download', {
-    os: os
-  });
-}
-</script>
+<!-- INSTALL -->
+<div id="install" class="panel">
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Download Genvium
+    </h2>
+
+    <p class="section-subtitle">
+      Access the desktop beta and start organizing your startup funding workflow.
+    </p>
+
+    <div class="download-card">
+      <h3>macOS</h3>
+
+      <p style="margin-bottom: 14px;">
+        Apple Silicon build available now.
+      </p>
+
+      <a
+        href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-Beta3/GenviumV3-signed.pkg"
+        download
+        onclick="trackDownload('macos')"
+      >
+        Download beta version
+      </a>
+
+      <p style="margin-top: 18px; color: #6B7280;">
+        Intel version coming soon.
+      </p>
+    </div>
+
+    <div class="download-card">
+      <h3>Windows</h3>
+
+      <p>
+        Windows release currently in development.
+      </p>
+    </div>
+
+    <div class="download-card">
+      <h3>Linux</h3>
+
+      <p>
+        Linux support planned for a future release.
+      </p>
+    </div>
+
+  </section>
+
+</div>
+
+<!-- WEB -->
+<div id="web" class="panel">
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Web Version
+    </h2>
+
+    <p class="section-subtitle">
+      Lightweight browser-based access for teams that want quick visibility into opportunities.
+    </p>
+
+    <div class="download-card">
+
+      <h3>Genvium Lite</h3>
+
+      <p style="margin-bottom: 18px;">
+        Access the lightweight web version of Genvium directly from your browser.
+      </p>
+
+      <a href="https://genvium-app-506833711331.us-central1.run.app" target="_blank">
+        Launch web version
+      </a>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="panel">
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Contact us
+    </h2>
+
+    <p class="section-subtitle">
+      Questions, feedback, partnerships, or early access inquiries.
+    </p>
+
+    <div class="download-card">
+
+      <h3>Email</h3>
+
+      <p style="margin-bottom: 10px;">
+        info@genvium.com
+      </p>
+
+    </div>
+
+    <div class="download-card">
+
+      <h3>Socials</h3>
+
+      <p style="color: #6B7280; margin-bottom: 18px;">
+        Add your official links here later.
+      </p>
+
+      <p>LinkedIn — Coming soon</p>
+      <p>X / Twitter — Coming soon</p>
+      <p>YouTube — Coming soon</p>
+
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div class="footer-column">
+      <h4>Genvium</h4>
+
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('install')">Install</a>
+      <a onclick="showSection('web')">Web</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Platform</h4>
+
+      <a href="#">Funding discovery</a>
+      <a href="#">Application tracking</a>
+      <a href="#">Opportunity filtering</a>
+      <a href="#">Founder workflows</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Company</h4>
+
+      <a href="#">Auduvant Technologies</a>
+      <a href="#">Roadmap</a>
+      <a href="#">Early access</a>
+      <a href="#">Support</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact</h4>
+
+      <a href="mailto:info@genvium.com">info@genvium.com</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">X / Twitter</a>
+      <a href="#">YouTube</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Genvium. Built by Auduvant Technologies.
+  </div>
+
+</footer>
 
 <script>
+
+  function trackDownload(os) {
+    gtag('event', 'download', {
+      os: os
+    });
+  }
+
   function showSection(id) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(sec => sec.classList.remove('active'));
+
+    const sections = document.querySelectorAll('.panel');
+
+    sections.forEach(sec => {
+      sec.classList.remove('active');
+    });
+
     document.getElementById(id).classList.add('active');
 
-    // Track section view
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
     gtag('event', 'section_view', {
       section_name: id
     });
   }
+
 </script>
 
 </body>
