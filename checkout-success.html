@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Payment Successful | Genvium Plus</title>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B9XYFVLCV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,6 +12,8 @@
     gtag('js', new Date());
     gtag('config', 'G-3B9XYFVLCV');
   </script>
+
+  <meta name="robots" content="noindex, nofollow">
 
   <style>
     /* Base Genvium Styles */
@@ -184,7 +185,6 @@
     <p>Welcome to <strong>Genvium Plus</strong>. Your account has been successfully upgraded. You can now close this window and return to the Genvium app to start exploring advanced funding opportunities.</p>
     
     <div class="action-group">
-      <!-- Using window.close() works well if opened via a desktop app or popup link -->
       <button onclick="window.close()" class="btn-primary">Close this window</button>
       <a href="https://genvium.com" class="btn-secondary">Return to website</a>
     </div>
@@ -194,6 +194,13 @@
 <footer>
   <p>© 2026 Auduvant Technologies. All rights reserved.</p>
 </footer>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (!urlParams.has('session_id')) {
+    window.location.href = 'https://genvium.com';
+  }
+</script>
 
 </body>
 </html>
