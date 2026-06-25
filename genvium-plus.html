@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genvium Plus | Premium Startup Funding Intelligence</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B9XYFVLCV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3B9XYFVLCV');
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #F4F7FA;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E5E7EB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0F172A;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 26px;
+      text-decoration: none;
+      color: #374151;
+      font-size: 15px;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #2563EB;
+    }
+
+    .hero {
+      padding: 120px 40px 60px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #DBEAFE;
+      color: #1D4ED8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
+      color: #0F172A;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 780px;
+      margin: auto;
+      color: #4B5563;
+    }
+
+    .section {
+      padding: 60px 40px 90px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ── Pricing Matrix Grid ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid #E5E7EB;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.25s ease;
+    }
+
+    .price-card.featured {
+      border: 2px solid #2563EB;
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.06);
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -14px;
+      right: 40px;
+      background: #2563EB;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-header h3 {
+      font-size: 28px;
+      color: #0F172A;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .card-header .price {
+      font-size: 42px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .card-header .price span {
+      font-size: 16px;
+      font-weight: 500;
+      color: #6B7280;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 40px;
+      flex-grow: 1;
+    }
+
+    .feature-list li {
+      font-size: 16px;
+      color: #4B5563;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: #2563EB;
+      font-weight: bold;
+      margin-right: 12px;
+      display: inline-block;
+    }
+
+    .feature-list li.muted {
+      color: #94A3B8;
+    }
+
+    .feature-list li.muted::before {
+      color: #CBD5E1;
+    }
+
+    .feature-list li .badge-soon {
+      display: inline-block;
+      font-size: 11px;
+      background: #F1F5F9;
+      color: #64748B;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    /* ── Action Buttons ── */
+    .btn-primary {
+      display: block;
+      text-align: center;
+      background: #2563EB;
+      color: white;
+      padding: 16px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-primary:hover {
+      background: #1D4ED8;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: block;
+      text-align: center;
+      border: 1px solid #CBD5E1;
+      color: #111827;
+      padding: 16px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      background: white;
+      transition: 0.2s ease;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-secondary:hover {
+      border-color: #94A3B8;
+      background: #F8FAFC;
+    }
+
+    /* ── Deep Dive Features section ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .feature-card h4 {
+      margin-bottom: 12px;
+      font-size: 20px;
+      color: #0F172A;
+    }
+
+    .feature-card p {
+      color: #4B5563;
+      font-size: 15px;
+    }
+
+    .cta-section {
+      margin-top: 60px;
+      text-align: center;
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      color: white;
+      border-radius: 30px;
+      padding: 80px 40px;
+    }
+
+    .cta-section h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 34px;
+      color: rgba(255,255,255,0.8);
+      font-size: 18px;
+    }
+
+    .cta-section .btn-primary {
+      display: inline-block;
+      width: auto;
+      padding: 16px 40px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #0081B3;
+      padding: 25px 40px;
+      text-align: center;
+      margin-top: 90px;
+      font-size: 13px;
+      color: white;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      opacity: 0.85;
+    }
+
+    footer a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .cta-section h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Genvium</a>
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#install">Download</a>
+    <a href="index.html#web">Web version</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-badge">Supercharge Your Fundraising Workflow</div>
+    <h1>Accelerate discovery with Genvium Plus</h1>
+    <p>
+      Unlock custom generative AI tooling, deep tracking infrastructure, and automated collateral drafting built directly inside your workspace pipeline.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="pricing-grid">
+      
+      <div class="price-card">
+        <div class="card-header">
+          <h3>Standard</h3>
+          <div class="price">Free</div>
+        </div>
+        <ul class="feature-list">
+          <li>40+ structured funding opportunities</li>
+          <li>Fundamental application pipeline tracking</li>
+          <li>Comprehensive payment history tracker</li>
+          <li>Opportunity readiness checklist templates</li>
+          <li>System platform notifications</li>
+          <li class="muted">Genvium AI grant draft generator</li>
+          <li class="muted">Competition pitch deck assistant</li>
+          <li class="muted">Crowdfunding story writer</li>
+          <li class="muted">Priority support ticket queue</li>
+        </ul>
+        <a href="index.html#install" class="btn-secondary">Get Free Access</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="featured-tag">Most Popular</div>
+        <div class="card-header">
+          <h3>Genvium Plus</h3>
+          <div class="price">$5 <span>/ month</span></div>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Everything in Standard tier, plus:</strong></li>
+          <li>Genvium AI grant draft generator</li>
+          <li>Competition pitch deck assistant <span class="badge-soon">Coming Soon</span></li>
+          <li>Crowdfunding story writer <span class="badge-soon">Coming Soon</span></li>
+          <li>Priority baseline support response infrastructure</li>
+          <li>Instant access to all core beta expansions</li>
+        </ul>
+        <button onclick="handleUpgrade()" class="btn-primary">Upgrade to Plus</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" style="border-top: 1px solid #E5E7EB;">
+    <h2 style="text-align: center; font-size: 38px; letter-spacing: -1.5px; margin-bottom: 10px; color: #0F172A;">What makes Plus powerful?</h2>
+    <p style="text-align: center; color: #4B5563; max-width: 600px; margin: 0 auto 40px;">Engineered to automate administrative drag so your team can maintain focus on scale.</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>AI Grant Draft Generator</h4>
+        <p>Analyze parameters of mapped grants and synthesize matching structural proposals matching compliance standards effortlessly.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Pitch Deck Assistant</h4>
+        <p>Translate specific requirements from regional and private accelerator competitions into clear, modular layout priorities.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Crowdfunding Story Writer</h4>
+        <p>Generate highly engaging copy and long-form operational timelines optimized for public alternative financing mechanisms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta-section">
+      <h2>Build without roadblocks.</h2>
+      <p>Upgrade your configuration instantly inside your account console or secure your subscription setup today.</p>
+      <button onclick="handleUpgrade()" class="btn-primary" style="background: white; color: #0F172A;">Get Started Instantly</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Auduvant Technologies. All rights reserved.</p>
+  <div>
+    <a href="index.html#product-terms">Product Terms</a>
+    <a href="index.html#privacy">Privacy Policy</a>
+    <a href="index.html#transparency">Data Transparency</a>
+    <a href="index.html#copyright">Copyright</a>
+    <a href="index.html#licenses">Software Notices</a>
+  </div>
+</footer>
+
+<script>
+  function handleUpgrade() {
+    gtag('event', 'initiate_checkout', { items: [{ item_name: 'Genvium Plus Tier', price: 5.00 }] });
+    // Point this to your web app router or your billing webhook integration location
+    window.location.href = "https://webapp.genvium.com/billing";
+  }
+</script>
+
+</body>
+</html>
