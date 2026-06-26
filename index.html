@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Genvium | Startup Funding Intelligence</title>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B9XYFVLCV"></script>
-
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -33,6 +31,36 @@
       line-height: 1.6;
     }
 
+    /* Skip to content link styling */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: #2563EB;
+      color: white;
+      padding: 10px 20px;
+      z-index: 9999;
+      transition: top 0.2s ease;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Standardized accessible link buttons styling */
+    .link-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      display: inline;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -53,16 +81,20 @@
       color: #0F172A;
     }
 
-    nav a {
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .link-btn, nav a {
       margin-left: 26px;
       text-decoration: none;
       color: #374151;
       font-size: 15px;
       transition: 0.2s ease;
-      cursor: pointer;
     }
 
-    nav a:hover {
+    nav .link-btn:hover, nav a:hover {
       color: #2563EB;
     }
 
@@ -116,6 +148,9 @@
       font-weight: 600;
       transition: 0.2s ease;
       cursor: pointer;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
     }
 
     .btn-primary:hover {
@@ -133,6 +168,8 @@
       background: white;
       transition: 0.2s ease;
       cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
     }
 
     .btn-secondary:hover {
@@ -385,6 +422,10 @@
       line-height: 1.9;
     }
 
+    .legal a {
+      color: #2563EB;
+    }
+
     /* ── Footer ── */
     footer {
       background: #0081B3;
@@ -400,15 +441,13 @@
       color: rgba(255,255,255,0.85);
     }
 
-    footer a {
+    footer .link-btn {
       color: white;
-      text-decoration: none;
       margin: 0 10px;
       opacity: 0.85;
-      cursor: pointer;
     }
 
-    footer a:hover {
+    footer .link-btn:hover {
       opacity: 1;
     }
 
@@ -418,7 +457,7 @@
         gap: 18px;
       }
 
-      nav a {
+      nav .link-btn, nav a {
         margin: 0 10px;
       }
 
@@ -443,454 +482,467 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header>
   <div class="logo">Genvium</div>
   <nav>
-    <a onclick="showSection('home')">Home</a>
-    <a onclick="showSection('install')">Install</a>
-    <a onclick="showSection('web')">Web</a>
+    <button class="link-btn" onclick="showSection('home')">Home</button>
+    <button class="link-btn" onclick="showSection('install')">Install</button>
+    <button class="link-btn" onclick="showSection('web')">Web</button>
     <a href="https://www.genvium.com/genvium-plus.html">Plus</a>
-    <a onclick="showSection('contact')">Contact</a>
+    <button class="link-btn" onclick="showSection('contact')">Contact</button>
   </nav>
 </header>
 
-<!-- HOME -->
-<div id="home" class="panel active">
+<main id="main-content">
+  <div id="home" class="panel active">
 
-  <section class="hero">
-    <div class="hero-badge">Built for startups navigating modern funding</div>
+    <section class="hero">
+      <div class="hero-badge">Built for startups navigating modern funding</div>
 
-    <h1>Discover funding opportunities without drowning in spreadsheets</h1>
+      <h1>Discover funding opportunities without drowning in spreadsheets</h1>
 
-    <p>
-      Genvium helps startups discover, organize, and track grants, tax credits,
-      accelerators, competitions, and investor opportunities from a centralized
-      searchable platform designed to reduce friction and help founders move faster.
-    </p>
+      <p>
+        Genvium helps startups discover, organize, and track grants, tax credits,
+        accelerators, competitions, and investor opportunities from a centralized
+        searchable platform designed to reduce friction and help founders move faster.
+      </p>
 
-    <div class="hero-actions">
-      <a href="#cta" class="btn-primary">Start exploring opportunities</a>
-      <a onclick="showSection('install')" class="btn-secondary">Download desktop beta</a>
-    </div>
-
-    <div class="hero-note">Early launch • 15+ founders already using Genvium</div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">Built to make funding discovery practical</h2>
-    <p class="section-subtitle">
-      We designed Genvium around one core problem: founders spend too much time
-      hunting for funding opportunities and not enough time building their companies.
-    </p>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>Centralized opportunity database</h3>
-        <p>Search through grants, startup programs, tax incentives, competitions, and investment opportunities from one organized platform instead of jumping between dozens of disconnected websites.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">Start exploring opportunities</a>
+        <button onclick="showSection('install')" class="btn-secondary">Download desktop beta</button>
       </div>
-      <div class="feature-card">
-        <h3>Advanced filtering</h3>
-        <p>Narrow opportunities down quickly using targeted filters so your team spends less time searching and more time applying to opportunities that actually fit.</p>
+
+      <div class="hero-note">Early launch • 15+ founders already using Genvium</div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Built to make funding discovery practical</h2>
+      <p class="section-subtitle">
+        We designed Genvium around one core problem: founders spend too much time
+        hunting for funding opportunities and not enough time building their companies.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Centralized opportunity database</h3>
+          <p>Search through grants, startup programs, tax incentives, competitions, and investment opportunities from one organized platform instead of jumping between dozens of disconnected websites.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Advanced filtering</h3>
+          <p>Narrow opportunities down quickly using targeted filters so your team spends less time searching and more time applying to opportunities that actually fit.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Application tracking</h3>
+          <p>Keep track of deadlines, submissions, statuses, and next steps with a workflow built specifically for startup fundraising operations.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Recommended prospects dashboard</h3>
+          <p>Surface relevant opportunities faster with a dashboard that helps founders focus on funding sources aligned with their goals.</p>
+        </div>
+        <div class="feature-card">
+          <h3>External application links</h3>
+          <p>Jump directly to official application pages and resources without wasting time searching through outdated bookmarks or documents.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Built for momentum</h3>
+          <p>Genvium is designed to reduce administrative drag so startups can maintain momentum during fundraising and growth phases.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Application tracking</h3>
-        <p>Keep track of deadlines, submissions, statuses, and next steps with a workflow built specifically for startup fundraising operations.</p>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h2>15+</h2>
+          <p>Early users exploring the platform during launch month</p>
+        </div>
+        <div class="stat-card">
+          <h2>1</h2>
+          <p>Central workspace for funding discovery and organization</p>
+        </div>
+        <div class="stat-card">
+          <h2>0</h2>
+          <p>Interest in making founders waste time on irrelevant opportunities</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Recommended prospects dashboard</h3>
-        <p>Surface relevant opportunities faster with a dashboard that helps founders focus on funding sources aligned with their goals.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">How Genvium works</h2>
+      <p class="section-subtitle">
+        The platform is intentionally simple. We focus on reducing friction throughout
+        the funding discovery process.
+      </p>
+
+      <div class="workflow">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <h3>Search intelligently</h3>
+          <p>Browse opportunities through a structured database with filtering tools that help narrow results quickly.</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <h3>Organize your pipeline</h3>
+          <p>Save relevant opportunities, monitor deadlines, and maintain visibility across your applications.</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <h3>Act faster</h3>
+          <p>Move directly into external application portals and keep momentum without losing context.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>External application links</h3>
-        <p>Jump directly to official application pages and resources without wasting time searching through outdated bookmarks or documents.</p>
+
+      <div class="coming-soon">
+        <h3>Upcoming features</h3>
+        <p>We are currently exploring AI-powered consultation tools designed to help startups better understand funding fit, opportunity readiness, and application strategy.</p>
       </div>
-      <div class="feature-card">
-        <h3>Built for momentum</h3>
-        <p>Genvium is designed to reduce administrative drag so startups can maintain momentum during fundraising and growth phases.</p>
+    </section>
+
+    <section class="section">
+      <div id="cta" class="cta-section">
+        <h2>Spend less time searching.<br>Spend more time building.</h2>
+        <p>Genvium was built by Auduvant Technologies to simplify how startups approach funding discovery and opportunity management.</p>
+        <div class="cta-buttons">
+          <button onclick="showSection('install')" class="btn-primary">Download Genvium</button>
+          <button onclick="showSection('web')" class="btn-secondary">Explore web version</button>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="stats">
-      <div class="stat-card">
-        <h2>15+</h2>
-        <p>Early users exploring the platform during launch month</p>
-      </div>
-      <div class="stat-card">
-        <h2>1</h2>
-        <p>Central workspace for funding discovery and organization</p>
-      </div>
-      <div class="stat-card">
-        <h2>0</h2>
-        <p>Interest in making founders waste time on irrelevant opportunities</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">How Genvium works</h2>
-    <p class="section-subtitle">
-      The platform is intentionally simple. We focus on reducing friction throughout
-      the funding discovery process.
-    </p>
-
-    <div class="workflow">
-      <div class="workflow-step">
-        <div class="step-number">1</div>
-        <h3>Search intelligently</h3>
-        <p>Browse opportunities through a structured database with filtering tools that help narrow results quickly.</p>
-      </div>
-      <div class="workflow-step">
-        <div class="step-number">2</div>
-        <h3>Organize your pipeline</h3>
-        <p>Save relevant opportunities, monitor deadlines, and maintain visibility across your applications.</p>
-      </div>
-      <div class="workflow-step">
-        <div class="step-number">3</div>
-        <h3>Act faster</h3>
-        <p>Move directly into external application portals and keep momentum without losing context.</p>
-      </div>
-    </div>
-
-    <div class="coming-soon">
-      <h3>Upcoming features</h3>
-      <p>We are currently exploring AI-powered consultation tools designed to help startups better understand funding fit, opportunity readiness, and application strategy.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div id="cta" class="cta-section">
-      <h2>Spend less time searching.<br>Spend more time building.</h2>
-      <p>Genvium was built by Auduvant Technologies to simplify how startups approach funding discovery and opportunity management.</p>
-      <div class="cta-buttons">
-        <a onclick="showSection('install')" class="btn-primary">Download Genvium</a>
-        <a onclick="showSection('web')" class="btn-secondary">Explore web version</a>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- INSTALL -->
-<div id="install" class="panel">
-  <section class="section">
-    <h2 class="section-title">Download Genvium</h2>
-    <p class="section-subtitle">Access the desktop beta and start organizing your startup funding workflow.</p>
-
-    <div class="download-card">
-      <h3>macOS</h3>
-      <p style="margin-bottom: 14px;">Apple Silicon build available now.</p>
-      <a href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-Beta3/GenviumV3-signed.pkg" download onclick="trackDownload('macos')">
-        Download beta version
-      </a>
-      <p style="margin-top: 18px; color: #6B7280;">Intel version coming soon.</p>
-    </div>
-
-    <div class="download-card">
-      <h3>Windows</h3>
-      <p>Windows release currently in development.</p>
-    </div>
-
-    <div class="download-card">
-      <h3>Linux</h3>
-      <p>Linux support planned for a future release.</p>
-    </div>
-  </section>
-</div>
-
-<!-- WEB -->
-<div id="web" class="panel">
-  <section class="section">
-    <h2 class="section-title">Web Version</h2>
-    <p class="section-subtitle">Lightweight browser-based access for teams that want quick visibility into opportunities.</p>
-
-    <div class="download-card">
-      <h3>Genvium Lite</h3>
-      <p style="margin-bottom: 18px;">Access the lightweight web version of Genvium directly from your browser.</p>
-      <a href="https://webapp.genvium.com" target="_blank">Launch web version</a>
-    </div>
-  </section>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="panel">
-  <section class="section">
-    <h2 class="section-title">Contact us</h2>
-    <p class="section-subtitle">Questions, feedback, partnerships, or early access inquiries.</p>
-
-    <div class="download-card">
-      <h3>Email</h3>
-      <p>info@genvium.com</p>
-    </div>
-
-    <div class="download-card">
-      <h3>Socials</h3>
-      <p style="color: #6B7280; margin-bottom: 18px;">Add your official links here later.</p>
-      <p>LinkedIn — Coming soon</p>
-      <p>X / Twitter — Coming soon</p>
-      <p>YouTube — Coming soon</p>
-    </div>
-  </section>
-</div>
-
-<!-- PRODUCT TERMS -->
-<div id="product-terms" class="panel">
-  <div class="legal">
-    <h1>Genvium Product Terms</h1>
-    <p class="last-updated">Last updated: June 2026</p>
-
-    <p>These Genvium Product Terms ("Terms") govern access to and use of Genvium and related services operated by Auduvant Technologies ("we," "our," or "us"). By accessing, downloading, installing, or using Genvium, you agree to these Terms. If you do not agree to these Terms, you should not use the platform or related services.</p>
-
-    <h2>1. About Genvium</h2>
-    <p>Genvium is a software platform designed to help startups discover, organize, and manage funding opportunities, including grants, tax credits, competitions, accelerators, and related funding resources. The platform may include:</p>
-    <ul>
-      <li>Desktop software</li>
-      <li>Web-based services</li>
-      <li>Search and filtering tools</li>
-      <li>Application tracking features</li>
-      <li>External resource links</li>
-      <li>Analytics and recommendation features</li>
-    </ul>
-    <p>Certain features may change, expand, or be discontinued over time.</p>
-
-    <h2>2. Eligibility</h2>
-    <p>You may use Genvium only in compliance with applicable laws and regulations. By using the platform, you represent that:</p>
-    <ul>
-      <li>You are legally permitted to use the services</li>
-      <li>You will not misuse or interfere with the platform</li>
-      <li>Any information voluntarily provided by you is accurate to the best of your knowledge</li>
-    </ul>
-
-    <h2>3. Software License</h2>
-    <p>Subject to these Terms, Auduvant Technologies grants you a limited, non-exclusive, non-transferable, revocable license to access and use Genvium for lawful business or personal use. This license does not grant ownership of the software or related intellectual property. Users may not:</p>
-    <ul>
-      <li>Copy, redistribute, or resell the software</li>
-      <li>Reverse engineer or attempt to extract source code except where prohibited by law</li>
-      <li>Modify or create derivative works based on the platform</li>
-      <li>Use the platform for unlawful, harmful, or fraudulent purposes</li>
-      <li>Interfere with platform functionality or security</li>
-    </ul>
-    <p>Genvium is proprietary software owned by Auduvant Technologies.</p>
-
-    <h2>4. Intellectual Property</h2>
-    <p>All software, branding, designs, graphics, interfaces, text, databases, workflows, and related materials associated with Genvium are owned by Auduvant Technologies unless otherwise stated. No rights are granted except as expressly provided in these Terms. Third-party trademarks, libraries, and technologies remain the property of their respective owners.</p>
-
-    <h2>5. Third-Party Services and Links</h2>
-    <p>Genvium may provide links or references to third-party websites, funding providers, application portals, or external resources. We do not control or guarantee:</p>
-    <ul>
-      <li>Third-party content</li>
-      <li>External application outcomes</li>
-      <li>Funding approvals</li>
-      <li>Accuracy of external services</li>
-      <li>Availability of third-party websites</li>
-    </ul>
-    <p>Users interact with external services at their own discretion and risk.</p>
-
-    <h2>6. Beta Features and Availability</h2>
-    <p>Certain portions of Genvium may be released as beta, preview, experimental, or early-access functionality. These features may:</p>
-    <ul>
-      <li>Contain bugs or inaccuracies</li>
-      <li>Change without notice</li>
-      <li>Experience interruptions or downtime</li>
-      <li>Be modified or removed at any time</li>
-    </ul>
-    <p>We do not guarantee uninterrupted availability of the platform or services.</p>
-
-    <h2>7. Data and Analytics</h2>
-    <p>Use of Genvium may involve limited analytics and technical usage data as described in our Privacy Policy and Data Transparency Policy. By using the platform, users acknowledge that certain technical and usage information may be collected to improve platform functionality, performance, and security.</p>
-
-    <h2>8. No Financial or Legal Advice</h2>
-    <p>Genvium is an informational and organizational platform only. Nothing provided through Genvium constitutes financial advice, investment advice, legal advice, tax advice, or professional consulting services. Users remain solely responsible for evaluating opportunities, conducting due diligence, and making business decisions.</p>
-
-    <h2>9. Disclaimer of Warranties</h2>
-    <p>Genvium is provided on an "as is" and "as available" basis. To the maximum extent permitted by law, Auduvant Technologies disclaims all warranties, express or implied, including merchantability, fitness for a particular purpose, non-infringement, accuracy or reliability of information, and continuous availability. We do not guarantee that the platform will be error-free, secure, or uninterrupted.</p>
-
-    <h2>10. Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, Auduvant Technologies shall not be liable for lost profits, business interruption, funding outcomes, loss of data, indirect or consequential damages, reliance on platform information, or third-party service failures. Use of the platform is at your own risk.</p>
-
-    <h2>11. Termination</h2>
-    <p>We may suspend or terminate access to Genvium at any time if these Terms are violated, platform misuse occurs, or security or operational concerns arise. We also reserve the right to discontinue or modify services at any time.</p>
-
-    <h2>12. Changes to These Terms</h2>
-    <p>These Terms may be updated periodically to reflect changes in the platform, services, legal obligations, or operational practices. Continued use of Genvium following updates indicates acknowledgment of the revised Terms.</p>
-
-    <h2>13. Governing Law</h2>
-    <p>These Terms shall be governed by and interpreted in accordance with the laws applicable in the United States of America.</p>
-
-    <h2>14. Contact</h2>
-    <p>Questions regarding these Terms may be directed to: <a href="mailto:info@genvium.com">info@genvium.com</a></p>
   </div>
-</div>
 
-<!-- PRIVACY POLICY -->
-<div id="privacy" class="panel">
-  <div class="legal">
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: June 2026</p>
+  <div id="install" class="panel">
+    <section class="section">
+      <h2 class="section-title">Download Genvium</h2>
+      <p class="section-subtitle">Access the desktop beta and start organizing your startup funding workflow.</p>
 
-    <p>This Privacy Policy describes how Auduvant Technologies ("we," "our," or "us") collects, uses, processes, stores, and protects information in connection with Genvium and related websites, applications, software, and services (collectively, the "Services"). By accessing or using the Services, you acknowledge the practices described in this Privacy Policy.</p>
+      <div class="download-card">
+        <h3>macOS</h3>
+        <p style="margin-bottom: 14px;">Apple Silicon build available now.</p>
+        <a href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-Beta3/GenviumV3-signed.pkg" download onclick="trackDownload('macos')">
+          Download beta version
+        </a>
+        <p style="margin-top: 18px; color: #6B7280;">Intel version coming soon.</p>
+      </div>
 
-    <h2>1. Information We Collect</h2>
-    <p>We may collect certain information directly from users, automatically through use of the Services, or from third-party service providers.</p>
+      <div class="download-card">
+        <h3>Windows</h3>
+        <p>Windows release currently in development.</p>
+      </div>
 
-    <h3>Information You Voluntarily Provide</h3>
-    <p>This may include contact information such as email addresses, communications and support inquiries, feedback submissions, waitlist or early-access requests, and other information voluntarily submitted through the Services.</p>
-
-    <h3>Automatically Collected Information</h3>
-    <p>When users access the Services, certain technical and usage information may be collected automatically, including device and browser information, operating system information, IP address and approximate geographic region, usage and interaction data, website navigation activity, download activity, referral and traffic source information, and session and performance analytics.</p>
-
-    <h3>Third-Party Information</h3>
-    <p>We may receive limited information from third-party platforms, hosting providers, analytics services, or infrastructure providers necessary to operate and maintain the Services.</p>
-
-    <h2>2. How We Use Information</h2>
-    <p>We may use collected information to operate and maintain the Services, improve platform functionality and user experience, monitor platform usage and engagement, respond to inquiries and support requests, analyze performance and technical issues, develop new features and products, maintain platform security and reliability, comply with legal obligations, and protect against misuse, fraud, or unauthorized activity.</p>
-
-    <h2>3. Analytics and Cookies</h2>
-    <p>Auduvant Technologies may use analytics technologies, cookies, and similar tools to understand how users interact with the Services. This may include the use of Google Analytics (GA4), essential session technologies, and performance and usage analytics tools. These technologies may collect device identifiers, browser information, session activity, interaction events, and approximate location data. Users may manage or disable cookies through their browser settings. Disabling certain cookies may affect portions of the Services.</p>
-
-    <h2>4. Legal Basis for Processing</h2>
-    <p>Where required by applicable law, we process personal information based on legitimate interests in operating and improving the Services, user consent, compliance with legal obligations, protection of security and platform integrity, and performance of requested services or communications.</p>
-
-    <h2>5. Sharing of Information</h2>
-    <p>We do not sell personal information to third parties. We may share limited information with hosting and infrastructure providers, analytics and monitoring providers, security and operational service providers, professional advisors where necessary, and authorities where legally required. Third-party providers may process information solely as necessary to provide their services.</p>
-
-    <h2>6. International Data Processing</h2>
-    <p>Information may be processed, transferred, or stored in multiple jurisdictions, including Canada, the United States, and other regions where service providers or infrastructure operate. By using the Services, users acknowledge that information may be transferred outside their jurisdiction of residence, subject to applicable legal protections.</p>
-
-    <h2>7. Data Retention</h2>
-    <p>We retain information only for as long as reasonably necessary to operate and improve the Services, fulfill legitimate business purposes, comply with legal obligations, resolve disputes, and enforce agreements. Retention periods may vary depending on the type of information and operational requirements.</p>
-
-    <h2>8. Data Security</h2>
-    <p>We take reasonable administrative, technical, and organizational measures intended to protect information against unauthorized access, misuse, disclosure, or loss. However, no method of electronic transmission or storage can be guaranteed to be completely secure.</p>
-
-    <h2>9. User Rights</h2>
-    <p>Depending on applicable law, users may have rights regarding their personal information, including access to collected information, correction of inaccurate information, deletion of personal information, restriction or objection to certain processing, data portability where applicable, and withdrawal of consent where consent is relied upon. Requests may be submitted to <a href="mailto:info@genvium.com">info@genvium.com</a>. We may request verification of identity before fulfilling certain requests.</p>
-
-    <h2>10. Children's Privacy</h2>
-    <p>The Services are not directed toward children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that such information has been collected unintentionally, we will take reasonable steps to remove it.</p>
-
-    <h2>11. Third-Party Services and Links</h2>
-    <p>The Services may contain links to external websites, funding providers, or third-party resources. We are not responsible for third-party privacy practices, external content, third-party security practices, or availability or operation of external services. Users interact with third-party services at their own discretion and risk.</p>
-
-    <h2>12. Changes to This Privacy Policy</h2>
-    <p>This Privacy Policy may be updated periodically to reflect changes in services, technologies, operational practices, legal obligations, or regulatory requirements. Updated versions will be posted with a revised "Last updated" date. Continued use of the Services following updates indicates acknowledgment of the revised policy.</p>
-
-    <h2>13. Contact</h2>
-    <p>Questions regarding this Privacy Policy or privacy-related requests may be directed to: <a href="mailto:info@genvium.com">info@genvium.com</a></p>
+      <div class="download-card">
+        <h3>Linux</h3>
+        <p>Linux support planned for a future release.</p>
+      </div>
+    </section>
   </div>
-</div>
 
-<!-- DATA TRANSPARENCY -->
-<div id="transparency" class="panel">
-  <div class="legal">
-    <h1>Data Transparency Policy</h1>
-    <p class="last-updated">Last updated: June 2026</p>
+  <div id="web" class="panel">
+    <section class="section">
+      <h2 class="section-title">Web Version</h2>
+      <p class="section-subtitle">Lightweight browser-based access for teams that want quick visibility into opportunities.</p>
 
-    <p>At Genvium, we believe founders deserve transparency about how their data is handled. This page explains what information we collect, why we collect it, and what we do — and do not do — with that information.</p>
-
-    <h2>What We Collect</h2>
-    <p>Genvium currently collects limited analytics and usage information to help us improve the platform and understand product usage. This may include:</p>
-    <ul>
-      <li>Page visits and session activity</li>
-      <li>Device and browser type</li>
-      <li>Operating system information</li>
-      <li>Approximate geographic region</li>
-      <li>Website interaction events</li>
-      <li>Download activity</li>
-      <li>Navigation between sections of the site</li>
-      <li>Referral sources (such as search engines or external links)</li>
-    </ul>
-    <p>We may also collect information voluntarily provided by users through contact emails, support inquiries, and waitlists or feedback forms (if enabled in the future).</p>
-
-    <h2>What We Do NOT Collect</h2>
-    <p>We do not collect:</p>
-    <ul>
-      <li>Passwords through analytics tools</li>
-      <li>Keystroke recordings</li>
-      <li>Screen recordings</li>
-      <li>Personal financial information</li>
-      <li>Sensitive personal identification documents</li>
-      <li>Hidden background surveillance data</li>
-      <li>Uploaded founder documents through public website analytics</li>
-    </ul>
-    <p>We do not sell user data to third parties.</p>
-
-    <h2>Why We Collect Data</h2>
-    <p>We use analytics and usage information to improve the Genvium platform, understand which features users find useful, identify technical issues, prioritize future development, and measure platform engagement and adoption.</p>
-
-    <h2>Analytics Providers</h2>
-    <p>Genvium currently uses Google Analytics (GA4) to collect aggregated website analytics and performance metrics. Google may process certain technical information according to its own policies and regional compliance standards. Google Analytics may collect information such as IP address, device information, browser information, and website interaction data in order to provide aggregated analytics and reporting services. Additional third-party service providers may be used in the future to support website hosting, communications, security, or platform operations. These providers may process information only as necessary to provide their services.</p>
-
-    <h2>Cookies</h2>
-    <p>Genvium may use essential analytics cookies to measure traffic and engagement, improve platform performance, and understand feature usage trends. Users can manage or disable cookies through their browser settings.</p>
-
-    <h2>Legal Basis for Processing</h2>
-    <p>Where required by applicable law, Genvium processes information based on legitimate interests in operating, maintaining, securing, and improving the platform, as well as responding to user inquiries and support requests. In certain circumstances, processing may also occur based on user consent or to comply with legal obligations.</p>
-
-    <h2>International Data Processing</h2>
-    <p>Genvium and its service providers may process information in multiple jurisdictions, including Canada, the United States, and other locations where infrastructure or service providers operate. By using the platform, users acknowledge that information may be transferred, stored, or processed outside their country of residence, subject to applicable legal protections.</p>
-
-    <h2>GDPR &amp; CCPA Commitment</h2>
-    <p>Where applicable under privacy laws such as the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), and similar regulations, users may have rights regarding their personal information. Depending on applicable law, users may request access to personal information we hold about them, correction of inaccurate information, deletion of personal information, information regarding categories of collected data, and information regarding how personal information is used. Requests may be submitted to <a href="mailto:info@genvium.com">info@genvium.com</a>.</p>
-
-    <h2>Data Retention</h2>
-    <p>We retain analytics and usage information only for as long as reasonably necessary to improve and operate the platform. Retention periods may vary depending on the type of information collected, technical requirements, legal obligations, or service provider settings. Contact requests, support inquiries, and feedback submissions may be retained for a reasonable period to facilitate communication and improve user support.</p>
-
-    <h2>Data Security</h2>
-    <p>We take reasonable measures to protect platform and analytics data from unauthorized access, misuse, or disclosure.</p>
-
-    <h2>Policy Updates</h2>
-    <p>As Genvium evolves, this policy may be updated to reflect new features, services, or compliance requirements. Continued use of the platform after updates constitutes acceptance of the revised policy.</p>
-
-    <h2>Contact</h2>
-    <p>Questions regarding data practices or compliance can be directed to: <a href="mailto:info@genvium.com">info@genvium.com</a></p>
+      <div class="download-card">
+        <h3>Genvium Lite</h3>
+        <p style="margin-bottom: 18px;">Access the lightweight web version of Genvium directly from your browser.</p>
+        <a href="https://webapp.genvium.com" target="_blank">Launch web version</a>
+      </div>
+    </section>
   </div>
-</div>
 
-<!-- COPYRIGHT -->
-<div id="copyright" class="panel">
-  <div class="legal">
-    <h1>Copyright Notice</h1>
-    <p class="last-updated">Last updated: June 2026</p>
+  <div id="contact" class="panel">
+    <section class="section">
+      <h2 class="section-title">Contact us</h2>
+      <p class="section-subtitle">Questions, feedback, partnerships, or early access inquiries.</p>
 
-    <p>© 2026 Auduvant Technologies. All rights reserved.</p>
-    <p>Genvium and related branding, software, website content, interface designs, graphics, and platform materials are the property of Auduvant Technologies unless otherwise stated.</p>
-    <p>No portion of the platform, website, or materials may be copied, reproduced, distributed, modified, or used for commercial purposes without prior written permission.</p>
-    <p>Third-party trademarks, service marks, and content referenced on the platform remain the property of their respective owners.</p>
+      <div class="download-card">
+        <h3>Email</h3>
+        <p>info@genvium.com</p>
+      </div>
+
+      <div class="download-card">
+        <h3>Socials</h3>
+        <p style="color: #6B7280; margin-bottom: 18px;">Add your official links here later.</p>
+        <p>LinkedIn — Coming soon</p>
+        <p>X / Twitter — Coming soon</p>
+        <p>YouTube — Coming soon</p>
+      </div>
+    </section>
   </div>
-</div>
 
-<!-- SOFTWARE NOTICES -->
-<div id="licenses" class="panel">
-  <div class="legal">
-    <h1>Third-Party Software Notices</h1>
-    <p class="last-updated">Last updated: June 2026</p>
+  <div id="product-terms" class="panel">
+    <div class="legal">
+      <h1>Genvium Product Terms</h1>
+      <p class="last-updated">Last updated: June 2026</p>
 
-    <p>Genvium includes or utilizes certain open-source software components. These components remain the property of their respective authors and are distributed under their applicable licenses.</p>
+      <p>These Genvium Product Terms ("Terms") govern access to and use of Genvium and related services operated by Auduvant Technologies ("we," "our," or "us"). By accessing, downloading, installing, or using Genvium, you agree to these Terms. If you do not agree to these Terms, you should not use the platform or related services.</p>
 
-    <p>Included technologies may include:</p>
-    <ul>
-      <li>Java</li>
-      <li>JavaFX</li>
-      <li>Maven</li>
-      <li>SQLite</li>
-      <li>Jackson</li>
-      <li>OkHttp</li>
-      <li>Eclipse Temurin</li>
-    </ul>
+      <h2>1. About Genvium</h2>
+      <p>Genvium is a software platform designed to help startups discover, organize, and manage funding opportunities, including grants, tax credits, competitions, accelerators, and related funding resources. The platform may include:</p>
+      <ul>
+        <li>Desktop software</li>
+        <li>Web-based services</li>
+        <li>Search and filtering tools</li>
+        <li>Application tracking features</li>
+        <li>External resource links</li>
+        <li>Analytics and recommendation features</li>
+      </ul>
+      <p>Certain features may change, expand, or be discontinued over time.</p>
 
-    <p>Additional dependency licenses may apply depending on installed components and build configurations.</p>
+      <h2>2. Eligibility</h2>
+      <p>You may use Genvium only in compliance with applicable laws and regulations. By using the platform, you represent that:</p>
+      <ul>
+        <li>You are legally permitted to use the services</li>
+        <li>You will not misuse or interfere with the platform</li>
+        <li>Any information voluntarily provided by you is accurate to the best of your knowledge</li>
+      </ul>
+
+      <h2>3. Software License</h2>
+      <p>Subject to these Terms, Auduvant Technologies grants you a limited, non-exclusive, non-transferable, revocable license to access and use Genvium for lawful business or personal use. This license does not grant ownership of the software or related intellectual property. Users may not:</p>
+      <ul>
+        <li>Copy, redistribute, or resell the software</li>
+        <li>Reverse engineer or attempt to extract source code except where prohibited by law</li>
+        <li>Modify or create derivative works based on the platform</li>
+        <li>Use the platform for unlawful, harmful, or fraudulent purposes</li>
+        <li>Interfere with platform functionality or security</li>
+      </ul>
+      <p>Genvium is proprietary software owned by Auduvant Technologies.</p>
+
+      <h2>4. Intellectual Property</h2>
+      <p>All software, branding, designs, graphics, interfaces, text, databases, workflows, and related materials associated with Genvium are owned by Auduvant Technologies unless otherwise stated. No rights are granted except as expressly provided in these Terms. Third-party trademarks, libraries, and technologies remain the property of their respective owners.</p>
+
+      <h2>5. Third-Party Services and Links</h2>
+      <p>Genvium may provide links or references to third-party websites, funding providers, application portals, or external resources. We do not control or guarantee:</p>
+      <ul>
+        <li>Third-party content</li>
+        <li>External application outcomes</li>
+        <li>Funding approvals</li>
+        <li>Accuracy of external services</li>
+        <li>Availability of third-party websites</li>
+      </ul>
+      <p>Users interact with external services at their own discretion and risk.</p>
+
+      <h2>6. Beta Features and Availability</h2>
+      <p>Certain portions of Genvium may be released as beta, preview, experimental, or early-access functionality. These features may:</p>
+      <ul>
+        <li>Contain bugs or inaccuracies</li>
+        <li>Change without notice</li>
+        <li>Experience interruptions or downtime</li>
+        <li>Be modified or removed at any time</li>
+      </ul>
+      <p>We do not guarantee uninterrupted availability of the platform or services.</p>
+
+      <h2>7. Data and Analytics</h2>
+      <p>Use of Genvium may involve limited analytics and technical usage data as described in our Privacy Policy and Data Transparency Policy. By using the platform, users acknowledge that certain technical and usage information may be collected to improve platform functionality, performance, and security.</p>
+
+      <h2>8. No Financial or Legal Advice</h2>
+      <p>Genvium is an informational and organizational platform only. Nothing provided through Genvium constitutes financial advice, investment advice, legal advice, tax advice, or professional consulting services. Users remain solely responsible for evaluating opportunities, conducting due diligence, and making business decisions.</p>
+
+      <h2>9. Disclaimer of Warranties</h2>
+      <p>Genvium is provided on an "as is" and "as available" basis. To the maximum extent permitted by law, Auduvant Technologies disclaims all warranties, express or implied, including merchantability, fitness for a particular purpose, non-infringement, accuracy or reliability of information, and continuous availability. We do not guarantee that the platform will be error-free, secure, or uninterrupted.</p>
+
+      <h2>10. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Auduvant Technologies shall not be liable for lost profits, business interruption, funding outcomes, loss of data, indirect or consequential damages, reliance on platform information, or third-party service failures. Use of the platform is at your own risk.</p>
+
+      <h2>11. Termination</h2>
+      <p>We may suspend or terminate access to Genvium at any time if these Terms are violated, platform misuse occurs, or security or operational concerns arise. We also reserve the right to discontinue or modify services at any time.</p>
+
+      <h2>12. Changes to These Terms</h2>
+      <p>These Terms may be updated periodically to reflect changes in the platform, services, legal obligations, or operational practices. Continued use of Genvium following updates indicates acknowledgment of the revised Terms.</p>
+
+      <h2>13. Governing Law</h2>
+      <p>These Terms shall be governed by and interpreted in accordance with the laws applicable in the United States of America.</p>
+
+      <h2>14. Contact</h2>
+      <p>Questions regarding these Terms may be directed to: <a href="mailto:info@genvium.com">info@genvium.com</a></p>
+    </div>
   </div>
-</div>
 
-<!-- FOOTER -->
+  <div id="privacy" class="panel">
+    <div class="legal">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: June 2026</p>
+
+      <p>This Privacy Policy describes how Auduvant Technologies ("we," "our," or "us") collects, uses, processes, stores, and protects information in connection with Genvium and related websites, applications, software, and services (collectively, the "Services"). By accessing or using the Services, you acknowledge the practices described in this Privacy Policy.</p>
+
+      <h2>1. Information We Collect</h2>
+      <p>We may collect certain information directly from users, automatically through use of the Services, or from third-party service providers.</p>
+
+      <h3>Information You Voluntarily Provide</h3>
+      <p>This may include contact information such as email addresses, communications and support inquiries, feedback submissions, waitlist or early-access requests, and other information voluntarily submitted through the Services.</p>
+
+      <h3>Automatically Collected Information</h3>
+      <p>When users access the Services, certain technical and usage information may be collected automatically, including device and browser information, operating system information, IP address and approximate geographic region, usage and interaction data, website navigation activity, download activity, referral and traffic source information, and session and performance analytics.</p>
+
+      <h3>Third-Party Information</h3>
+      <p>We may receive limited information from third-party platforms, hosting providers, analytics services, or infrastructure providers necessary to operate and maintain the Services.</p>
+
+      <h2>2. How We Use Information</h2>
+      <p>We may use collected information to operate and maintain the Services, improve platform functionality and user experience, monitor platform usage and engagement, respond to inquiries and support requests, analyze performance and technical issues, develop new features and products, maintain platform security and reliability, comply with legal obligations, and protect against misuse, fraud, or unauthorized activity.</p>
+
+      <h2>3. Analytics and Cookies</h2>
+      <p>Auduvant Technologies may use analytics technologies, cookies, and similar tools to understand how users interact with the Services. This may include the use of Google Analytics (GA4), essential session technologies, and performance and usage analytics tools. These technologies may collect device identifiers, browser information, session activity, interaction events, and approximate location data. Users may manage or disable cookies through their browser settings. Disabling certain cookies may affect portions of the Services.</p>
+
+      <h2>4. Legal Basis for Processing</h2>
+      <p>Where required by applicable law, we process personal information based on legitimate interests in operating and improving the Services, user consent, compliance with legal obligations, protection of security and platform integrity, and performance of requested services or communications.</p>
+
+      <h2>5. Sharing and Third-Party Processing</h2>
+      <p>We do not sell personal information to third parties. We may share limited information with hosting and infrastructure providers, analytics and monitoring providers, security and operational service providers, professional advisors where necessary, and authorities where legally required.</p>
+      <p>We utilize secure third-party core artificial intelligence services (including enterprise API protocols like the Google Gemini API framework) to construct programmatic content drafts and consultations. Proprietary operation metrics or text fields uploaded for draft generation are run under enterprise constraints to guarantee data isolation; user-submitted text and metrics are never ingested or deployed to train public foundation machine learning models.</p>
+
+      <h2>6. International Data Processing</h2>
+      <p>Information may be processed, transferred, or stored in multiple jurisdictions, including Canada, the United States, and other regions where service providers or infrastructure operate. By using the Services, users acknowledge that information may be transferred outside their jurisdiction of residence, subject to applicable legal protections.</p>
+
+      <h2>7. Data Retention</h2>
+      <p>We retain information only for as long as reasonably necessary to operate and improve the Services, fulfill legitimate business purposes, comply with legal obligations, resolve disputes, and enforce agreements. Retention periods may vary depending on the type of information and operational requirements.</p>
+
+      <h2>8. Data Security</h2>
+      <p>We take reasonable administrative, technical, and organizational measures intended to protect information against unauthorized access, misuse, disclosure, or loss. However, no method of electronic transmission or storage can be guaranteed to be completely secure.</p>
+
+      <h2>9. User Rights</h2>
+      <p>Depending on applicable law, users may have rights regarding their personal information, including access to collected information, correction of inaccurate information, deletion of personal information, restriction or objection to certain processing, data portability where applicable, and withdrawal of consent where consent is relied upon. Requests may be submitted to <a href="mailto:info@genvium.com">info@genvium.com</a>. We may request verification of identity before fulfilling certain requests.</p>
+
+      <h2>10. Children's Privacy</h2>
+      <p>The Services are not directed toward children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that such information has been collected unintentionally, we will take reasonable steps to remove it.</p>
+
+      <h2>11. Third-Party Services and Links</h2>
+      <p>The Services may contain links to external websites, funding providers, or third-party resources. We are not responsible for third-party privacy practices, external content, third-party security practices, or availability or operation of external services. Users interact with third-party services at their own discretion and risk.</p>
+
+      <h2>12. Changes to This Privacy Policy</h2>
+      <p>This Privacy Policy may be updated periodically to reflect changes in services, technologies, operational practices, legal obligations, or regulatory requirements. Updated versions will be posted with a revised "Last updated" date. Continued use of the Services following updates indicates acknowledgment of the revised policy.</p>
+
+      <h2>13. Contact</h2>
+      <p>Questions regarding this Privacy Policy or privacy-related requests may be directed to: <a href="mailto:info@genvium.com">info@genvium.com</a></p>
+    </div>
+  </div>
+
+  <div id="transparency" class="panel">
+    <div class="legal">
+      <h1>Data Transparency Policy</h1>
+      <p class="last-updated">Last updated: June 2026</p>
+
+      <p>At Genvium, we believe founders deserve transparency about how their data is handled. This page explains what information we collect, why we collect it, and what we do — and do not do — with that information.</p>
+
+      <h2>What We Collect</h2>
+      <p>Genvium currently collects limited analytics and usage information to help us improve the platform and understand product usage. This may include:</p>
+      <ul>
+        <li>Page visits and session activity</li>
+        <li>Device and browser type</li>
+        <li>Operating system information</li>
+        <li>Approximate geographic region</li>
+        <li>Website interaction events</li>
+        <li>Download activity</li>
+        <li>Navigation between sections of the site</li>
+        <li>Referral sources (such as search engines or external links)</li>
+      </ul>
+      <p>We may also collect information voluntarily provided by users through contact emails, support inquiries, and waitlists or feedback forms (if enabled in the future).</p>
+
+      <h2>What We Do NOT Collect</h2>
+      <p>We do not collect:</p>
+      <ul>
+        <li>Passwords through analytics tools</li>
+        <li>Keystroke recordings</li>
+        <li>Screen recordings</li>
+        <li>Personal financial information</li>
+        <li>Sensitive personal identification documents</li>
+        <li>Hidden background surveillance data</li>
+        <li>Uploaded founder documents through public website analytics</li>
+      </ul>
+      <p>We do not sell user data to third parties.</p>
+
+      <h2>Why We Collect Data</h2>
+      <p>We use analytics and usage information to improve the Genvium platform, understand which features users find useful, identify technical issues, prioritize future development, and measure platform engagement and adoption.</p>
+
+      <h2>Analytics Providers</h2>
+      <p>Genvium currently uses Google Analytics (GA4) to collect aggregated website analytics and performance metrics. Google may process certain technical information according to its own policies and regional compliance standards. Google Analytics may collect information such as IP address, device information, browser information, and website interaction data in order to provide aggregated analytics and reporting services. Additional third-party service providers may be used in the future to support website hosting, communications, security, or platform operations. These providers may process information only as necessary to provide their services.</p>
+
+      <h2>Cookies</h2>
+      <p>Genvium may use essential analytics cookies to measure traffic and engagement, improve platform performance, and understand feature usage trends. Users can manage or disable cookies through their browser settings.</p>
+
+      <h2>Legal Basis for Processing</h2>
+      <p>Where required by applicable law, Genvium processes information based on legitimate interests in operating, maintaining, securing, and improving the platform, as well as responding to user inquiries and support requests. In certain circumstances, processing may also occur based on user consent or to comply with legal obligations.</p>
+
+      <h2>International Data Processing</h2>
+      <p>Genvium and its service providers may process information in multiple jurisdictions, including Canada, the United States, and other locations where infrastructure or service providers operate. By using the platform, users acknowledge that information may be transferred, stored, or processed outside their country of residence, subject to applicable legal protections.</p>
+
+      <h2>GDPR &amp; CCPA Commitment</h2>
+      <p>Where applicable under privacy laws such as the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), and similar regulations, users may have rights regarding their personal information. Depending on applicable law, users may request access to personal information we hold about them, correction of inaccurate information, deletion of personal information, information regarding categories of collected data, and information regarding how personal information is used. Requests may be submitted to <a href="mailto:info@genvium.com">info@genvium.com</a>.</p>
+
+      <h2>Data Retention</h2>
+      <p>We retain analytics and usage information only for as long as reasonably necessary to improve and operate the platform. Retention periods may vary depending on the type of information collected, technical requirements, legal obligations, or service provider settings. Contact requests, support inquiries, and feedback submissions may be retained for a reasonable period to facilitate communication and improve user support.</p>
+
+      <h2>Data Security</h2>
+      <p>We take reasonable measures to protect platform and analytics data from unauthorized access, misuse, or disclosure.</p>
+
+      <h2>Policy Updates</h2>
+      <p>As Genvium evolves, this policy may be updated to reflect new features, services, or compliance requirements. Continued use of the platform after updates constitutes acceptance of the revised policy.</p>
+
+      <h2>Contact</h2>
+      <p>Questions regarding data practices or compliance can be directed to: <a href="mailto:info@genvium.com">info@genvium.com</a></p>
+    </div>
+  </div>
+
+  <div id="copyright" class="panel">
+    <div class="legal">
+      <h1>Copyright Notice</h1>
+      <p class="last-updated">Last updated: June 2026</p>
+
+      <p>© 2026 Auduvant Technologies. All rights reserved.</p>
+      <p>Genvium and related branding, software, website content, interface designs, graphics, and platform materials are the property of Auduvant Technologies unless otherwise stated.</p>
+      <p>No portion of the platform, website, or materials may be copied, reproduced, distributed, modified, or used for commercial purposes without prior written permission.</p>
+      <p>Third-party trademarks, service marks, and content referenced on the platform remain the property of their respective owners.</p>
+    </div>
+  </div>
+
+  <div id="licenses" class="panel">
+    <div class="legal">
+      <h1>Third-Party Software Notices</h1>
+      <p class="last-updated">Last updated: June 2026</p>
+
+      <p>Genvium includes or utilizes certain open-source software components. These components remain the property of their respective authors and are distributed under their applicable licenses.</p>
+
+      <p>Included technologies may include:</p>
+      <ul>
+        <li>Java</li>
+        <li>JavaFX</li>
+        <li>Maven</li>
+        <li>SQLite</li>
+        <li>Jackson</li>
+        <li>OkHttp</li>
+        <li>Eclipse Temurin</li>
+      </ul>
+
+      <p>Additional dependency licenses may apply depending on installed components and build configurations.</p>
+    </div>
+  </div>
+
+  <div id="accessibility" class="panel">
+    <div class="legal">
+      <h1>Accessibility Statement for Genvium</h1>
+      <p class="last-updated">This is an accessibility statement from Auduvant Technologies LLC.</p>
+
+      <h2>Conformance status</h2>
+      <p>The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. Genvium is partially conformant with WCAG 2.0 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.</p>
+
+      <h2>Feedback</h2>
+      <p>We welcome your feedback on the accessibility of Genvium. Please let us know if you encounter accessibility barriers while navigating our platform:</p>
+      <ul>
+        <li>E-mail: <a href="mailto:info@auduvanttechnologies.com">info@auduvanttechnologies.com</a></li>
+      </ul>
+      <p>We try to respond to feedback within 3 business days.</p>
+    </div>
+  </div>
+</main>
+
 <footer>
   <p>© 2026 Auduvant Technologies. All rights reserved.</p>
   <div>
-    <a onclick="showSection('product-terms')">Product Terms</a>
-    <a onclick="showSection('privacy')">Privacy Policy</a>
-    <a onclick="showSection('transparency')">Data Transparency</a>
-    <a onclick="showSection('copyright')">Copyright</a>
-    <a onclick="showSection('licenses')">Software Notices</a>
+    <button class="link-btn" onclick="showSection('product-terms')">Product Terms</button>
+    <button class="link-btn" onclick="showSection('privacy')">Privacy Policy</button>
+    <button class="link-btn" onclick="showSection('transparency')">Data Transparency</button>
+    <button class="link-btn" onclick="showSection('copyright')">Copyright</button>
+    <button class="link-btn" onclick="showSection('licenses')">Software Notices</button>
+    <button class="link-btn" onclick="showSection('accessibility')">Accessibility</button>
   </div>
 </footer>
 
