@@ -31,6 +31,23 @@
       line-height: 1.6;
     }
 
+    /* Skip to content link styling */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: #2563EB;
+      color: white;
+      padding: 10px 20px;
+      z-index: 9999;
+      transition: top 0.2s ease;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -58,7 +75,6 @@
       color: #374151;
       font-size: 15px;
       transition: 0.2s ease;
-      cursor: pointer;
     }
 
     nav a:hover {
@@ -221,11 +237,17 @@
       border: none;
       width: 100%;
       font-size: 16px;
+      font-family: inherit;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover:not(:disabled) {
       background: #1D4ED8;
       transform: translateY(-1px);
+    }
+    
+    .btn-primary:disabled {
+      background: #94A3B8;
+      cursor: not-allowed;
     }
 
     .btn-secondary {
@@ -242,6 +264,7 @@
       cursor: pointer;
       width: 100%;
       font-size: 16px;
+      font-family: inherit;
     }
 
     .btn-secondary:hover {
@@ -355,6 +378,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header>
   <a href="index.html" class="logo">Genvium</a>
   <nav>
@@ -365,7 +390,7 @@
   </nav>
 </header>
 
-<main>
+<main id="main-content">
   <section class="hero">
     <div class="hero-badge">Supercharge Your Fundraising Workflow</div>
     <h1>Accelerate discovery with Genvium Plus</h1>
@@ -410,7 +435,7 @@
           <li>Priority baseline support response infrastructure</li>
           <li>Instant access to all core beta expansions</li>
         </ul>
-        <button onclick="handleUpgrade()" class="btn-primary">Upgrade to Plus</button>
+        <button onclick="handleUpgrade(this, 'Upgrade to Plus')" class="btn-primary">Upgrade to Plus</button>
       </div>
 
     </div>
@@ -440,8 +465,7 @@
     <div class="cta-section">
       <h2>Build without roadblocks.</h2>
       <p>Upgrade your configuration instantly inside your account console or secure your subscription setup today.</p>
-      <!-- <button onclick="handleUpgrade()" class="btn-primary" style="background: white; color: #0F172A;">Get Started Instantly</button> -->
-      <button class="btn-primary" style="background: white; color: #0F172A;">Get Started</button>
+      <button onclick="handleUpgrade(this, 'Get Started')" class="btn-primary" style="background: white; color: #0F172A;">Get Started</button>
     </div>
   </section>
 </main>
@@ -458,10 +482,19 @@
 </footer>
 
 <script>
-  function handleUpgrade() {
-    gtag('event', 'initiate_checkout', { items: [{ item_name: 'Genvium Plus Tier', price: 5.00 }] });
-    // Point this to your web app router or your billing webhook integration location
-    window.location.href = "https://webapp.genvium.com/billing";
+  function handleUpgrade(buttonElement, originalText) {
+    // Fire analytics log tracking execution sequence
+    gtag('event', 'click_upgrade_beta', { tier: 'Genvium Plus' });
+    
+    // Set temporary state UI updates
+    buttonElement.disabled = true;
+    buttonElement.textContent = "Coming Soon...";
+    
+    // Smooth revert timeout back after 5000 milliseconds
+    setTimeout(function() {
+      buttonElement.disabled = false;
+      buttonElement.textContent = originalText;
+    }, 5000);
   }
 </script>
 
