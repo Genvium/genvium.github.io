@@ -961,7 +961,16 @@
     document.getElementById(id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     gtag('event', 'section_view', { section_name: id });
+    window.location.hash = id;
   }
+  
+  window.addEventListener("load", () => {
+    const hash = window.location.hash.slice(1);
+  
+    if (hash && ["home", "install", "web", "contact"].includes(hash)) {
+      showSection(hash);
+    }
+  });
 </script>
 
 </body>
