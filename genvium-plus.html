@@ -435,7 +435,7 @@
           <li>Priority baseline support response infrastructure</li>
           <li>Instant access to all core beta expansions</li>
         </ul>
-        <button onclick="handleUpgrade(this, 'Upgrade to Plus')" class="btn-primary">Upgrade to Plus</button>
+        <button onclick="handleUpgrade()" class="btn-primary">Upgrade to Plus</button>
       </div>
 
     </div>
@@ -483,18 +483,17 @@
 
 <script>
   function handleUpgrade(buttonElement, originalText) {
-    // Fire analytics log tracking execution sequence
-    gtag('event', 'click_upgrade_beta', { tier: 'Genvium Plus' });
-    
-    // Set temporary state UI updates
-    buttonElement.disabled = true;
-    buttonElement.textContent = "Coming Soon...";
-    
-    // Smooth revert timeout back after 5000 milliseconds
-    setTimeout(function() {
-      buttonElement.disabled = false;
-      buttonElement.textContent = originalText;
-    }, 5000);
+    gtag('event', 'click_genvium_plus', {
+      tier: 'Genvium Plus',
+      event_callback: () => {
+        window.location.href = "index.html#install";
+      }
+    });
+  
+    // Fallback in case the callback doesn't fire
+    setTimeout(() => {
+      window.location.href = "index.html#install";
+    }, 300);
   }
 </script>
 
