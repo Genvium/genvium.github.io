@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genvium | Installation Guide</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B9XYFVLCV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3B9XYFVLCV');
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #F4F7FA;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    /* Skip to content link styling */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: #2563EB;
+      color: white;
+      padding: 10px 20px;
+      z-index: 9999;
+      transition: top 0.2s ease;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Standardized accessible link buttons styling */
+    .link-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      display: inline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E5E7EB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0F172A;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .link-btn, nav a {
+      margin-left: 26px;
+      text-decoration: none;
+      color: #374151;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    nav .link-btn:hover, nav a:hover {
+      color: #2563EB;
+    }
+
+    .hero {
+      padding: 120px 40px 80px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #DBEAFE;
+      color: #1D4ED8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+      color: #0F172A;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 780px;
+      margin: auto;
+      color: #4B5563;
+    }
+
+    .section {
+      padding: 40px 40px 90px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      font-size: 36px;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      color: #0F172A;
+    }
+
+    .section-subtitle {
+      margin-bottom: 40px;
+      font-size: 18px;
+      color: #4B5563;
+    }
+
+    .download-card {
+      background: white;
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid #E5E7EB;
+      margin-bottom: 24px;
+    }
+
+    .download-card h3 {
+      margin-bottom: 16px;
+      font-size: 24px;
+      color: #111827;
+    }
+    
+    .download-card h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #1F2937;
+    }
+
+    .download-card p {
+      color: #4B5563;
+      margin-bottom: 14px;
+    }
+
+    .download-card ol, .download-card ul {
+      color: #4B5563;
+      margin-left: 20px;
+      margin-bottom: 14px;
+    }
+    
+    .download-card li {
+      margin-bottom: 8px;
+    }
+
+    .download-card a {
+      color: #2563EB;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .download-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #0081B3;
+      padding: 25px 40px;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 13px;
+      color: white;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      opacity: 0.85;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    footer a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav .link-btn, nav a {
+        margin: 0 10px;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <a href="index.html" class="logo">Genvium</a>
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#install">Install</a>
+    <a href="index.html#web">Web</a>
+    <a href="https://www.genvium.com/genvium-plus.html">Plus</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  
+  <section class="hero">
+    <div class="hero-badge">Setup & Support</div>
+    <h1>Installation Guide</h1>
+    <p>Follow these steps to get Genvium running on your machine securely. If you run into any issues, check our installation FAQs below.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Step-by-step Instructions</h2>
+    <p class="section-subtitle">How to install the Genvium desktop application on your operating system.</p>
+
+    <div class="download-card">
+      <h3>macOS (Apple Silicon & Intel)</h3>
+      <ol>
+        <li>Download the appropriate macOS installer from our <a href="index.html#install">Install page</a>.</li>
+        <li>Locate the downloaded <strong>.pkg</strong> file in your <em>Downloads</em> folder.</li>
+        <li>Double-click the installer to open it.</li>
+        <li>Follow the on-screen prompts in the macOS installation wizard.</li>
+        <li>Once finished, open your <strong>Applications</strong> folder and double-click <strong>Genvium</strong> to launch the app.</li>
+      </ol>
+    </div>
+
+    <div class="download-card">
+      <h3>Windows & Linux</h3>
+      <p>The native Windows and Linux clients are currently in development. In the meantime, we recommend accessing your funding dashboard via <strong>Genvium Lite</strong> directly from your browser.</p>
+      <a href="https://webapp.genvium.com" target="_blank">Launch Web Version &rarr;</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Installation FAQs</h2>
+    <p class="section-subtitle">Common questions and troubleshooting steps for setting up Genvium.</p>
+
+    <div class="download-card">
+      
+      <!-- Need to come back to this...
+      <h4>Why am I seeing an "unidentified developer" warning on macOS?</h4>
+      <p>Because Genvium is currently in beta, you might encounter a security prompt from macOS Gatekeeper. To bypass this:</p>
+      <ul>
+        <li><strong>Method 1:</strong> Right-click (or Control-click) the Genvium app or installer, and select <strong>Open</strong> from the context menu. Click <strong>Open</strong> again in the warning dialog.</li>
+        <li><strong>Method 2:</strong> Go to <em>System Settings > Privacy & Security</em>. Scroll down to the Security section and click <strong>Open Anyway</strong> next to the Genvium alert.</li>
+      </ul>
+      -->
+      
+      <h4>Do I need an internet connection to install Genvium?</h4>
+      <p>You need an internet connection to download the initial installer package. However, the installation process itself happens locally on your machine. Once installed, Genvium requires an internet connection to sync the latest funding opportunities and updates.</p>
+
+      <h4>Where is Genvium installed on my computer?</h4>
+      <p>On macOS, the application is installed in your system's default <strong>/Applications</strong> directory.</p>
+
+      <h4>How do I uninstall Genvium?</h4>
+      <p>To completely remove Genvium from your Mac, open your <strong>Applications</strong> folder, locate the Genvium app, and drag it to the Trash (or right-click and select <em>Move to Trash</em>). Empty your Trash to complete the uninstallation.</p>
+
+      <h4>I need help with something else.</h4>
+      <p>If you're having trouble getting the app to run, please reach out to our team at <a href="mailto:info@genvium.com">info@genvium.com</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Auduvant Technologies. All rights reserved.</p>
+  <div>
+    <a href="index.html#product-terms">Product Terms</a>
+    <a href="index.html#privacy">Privacy Policy</a>
+    <a href="index.html#transparency">Data Transparency</a>
+    <a href="index.html#copyright">Copyright</a>
+    <a href="index.html#licenses">Software Notices</a>
+    <a href="index.html#accessibility">Accessibility</a>
+  </div>
+</footer>
+
+</body>
+</html>
