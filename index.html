@@ -531,10 +531,7 @@
   <div class="logo">Genvium</div>
   <nav>
     <button class="link-btn" onclick="showSection('home')">Home</button>
-    <button class="link-btn" onclick="showSection('install')">Install</button>
-    <button class="link-btn" onclick="showSection('web')">Web</button>
-    <a href="https://www.genvium.com/genvium-plus.html">Plus</a>
-    <a href="https://www.genvium.com/installation-guide.html">Install Guide</a>
+    <button class="link-btn" onclick="showSection('app')">Genvium App</button>
     <button class="link-btn" onclick="showSection('contact')">Contact</button>
   </nav>
 </header>
@@ -656,68 +653,14 @@
 
   </div>
 
-  <div id="install" class="panel">
-    <!-- Small Pricing Note -->
-    <div style="margin: 24px auto 0; padding: 12px 18px; background: white; border: 1px solid #E5E7EB; border-radius: 12px; display: inline-block; max-width: 480px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-      <p style="font-size: 14px; color: #4B5563; margin: 0; line-height: 1.5;">
-        <strong style="color: #111827;">Pricing:</strong> Genvium is <strong>free</strong>. Unlock <strong>Genvium Plus for $5/mo</strong> by upgrading directly inside the app—no separate download needed.
-      </p>
-    </div>
-    
+  <div id="app" class="panel">
     <section class="section">
-      <h2 class="section-title">Download Genvium</h2>
-      <p class="section-subtitle">Access the desktop beta and start organizing your startup funding workflow.</p>
+      <h2 class="section-title">Genvium</h2>
+      <p class="section-subtitle">Access Genvium through the web.</p>
 
       <div class="download-card">
-        <h3>macOS</h3>
-        
-        <!-- Apple Silicon Section -->
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Apple Silicon</h4>
-        <ul style="padding-left: 40px; margin-bottom: 24px;">
-          <li>
-            <a href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-2.0/Genvium-Signed.pkg" download onclick="trackDownload('macos-silicon')">
-              Download
-            </a>
-          </li>
-        </ul>
-      
-        <!-- Intel Mac Section -->
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Intel-based Macs (2019 or Older)</h4>
-        <ul style="padding-left: 40px; margin-bottom: 24px;">
-          <li>
-            <a href="https://github.com/Genvium/genvium.github.io/releases/download/Genvium-2.0b/Genvium_Signed.pkg" download onclick="trackDownload('macos-intel')">
-              Download
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="download-card">
-        <h3>Windows</h3>
-        <p>Windows release currently in development.</p>
-      </div>
-
-      <div class="download-card">
-        <h3>Linux</h3>
-        <p>Linux support planned for a future release.</p>
-      </div>
-
-      <div class="download-card">
-        <h3>Beta Version</h3>
-        <p>Support for Beta Version has ended. Thank you to our early users for participating in the beta.</p>
-      </div>
-    </section>
-  </div>
-
-  <div id="web" class="panel">
-    <section class="section">
-      <h2 class="section-title">Web Version</h2>
-      <p class="section-subtitle">Lightweight browser-based access for teams that want quick visibility into opportunities.</p>
-
-      <div class="download-card">
-        <h3>Genvium Lite</h3>
-        <p style="margin-bottom: 18px;">Access the lightweight web version of Genvium directly from your browser.</p>
-        <a href="https://webapp.genvium.com" target="_blank">Launch web version</a>
+        <h3>Genvium App</h3>
+        <a href="https://webapp.genvium.com" target="_blank">Launch Genvium</a>
       </div>
     </section>
   </div>
@@ -734,10 +677,9 @@
 
       <div class="download-card">
         <h3>Socials</h3>
-        <p style="color: #6B7280; margin-bottom: 18px;">Add your official links here later.</p>
-        <p>LinkedIn — Coming soon</p>
+        <p><a href="https://www.linkedin.com/company/auduvant-technologies">LinkedIn</a></p>
+        <p><a href="https://www.youtube.com/@AuduvantTechnologies">YouTube</a></p>
         <p>X / Twitter — Coming soon</p>
-        <p>YouTube — Coming soon</p>
       </div>
     </section>
   </div>
@@ -833,18 +775,18 @@
   <div id="privacy" class="panel">
     <div class="legal">
       <h1>Privacy Policy</h1>
-      <p class="last-updated">Last updated: June 2026</p>
+      <p class="last-updated">Last updated: July 2026</p>
 
       <p>This Privacy Policy describes how Auduvant Technologies ("we," "our," or "us") collects, uses, processes, stores, and protects information in connection with our public marketing websites and online interactions (collectively, the "Services"). <strong>Please note: This policy applies strictly to our online web environment. Our flagship desktop application, Genvium, and our web application, Genvium Lite, are currently designed to run locally or statically on the web without collecting, tracking, or transmitting personal user data. However, as these applications evolve, we may introduce features that require data collection (such as cloud syncing or performance diagnostics), which will be handled in strict accordance with this policy.</strong></p>
       
-      <h2>1. Information We Collect</h2>
+      <h2>Information We Collect</h2>
       <p>To keep our data practices clear, we separate how we handle information across our public marketing websites and our user-facing applications.</p>
 
-      <h3>A. Genvium Desktop and Web Applications</h3>
-      <p><strong>The Genvium desktop application and the Genvium web application (Genvium Lite) do not collect, track, or transmit your personal data, search history, or funding research queries.</strong> The applications are designed to operate locally on your device, or sandboxed on the web (for Genvium Lite), ensuring your workflows and database interactions remain entirely private to you. Looking ahead, we may introduce opt-in cloud features, performance diagnostics, or analytics in future updates to improve platform stability, which will be accompanied by clear in-app notices and data management settings.</p>
+      <h3>A. Genvium Web Application</h3>
+      <p><strong>The Genvium web application (webapp.genvium.com) does collect personal data, limited to: usernames, emails, names and phone numbers. However, Genvium does not track search history, or funding research queries.</strong> The application is designed to operate sandboxed on the web, ensuring your workflows and database interactions remain entirely private to you. Looking ahead, we may introduce opt-in cloud features, performance diagnostics, or analytics in future updates to improve platform stability, which will be accompanied by clear in-app notices and data management settings.</p>
 
       <h3>B. Marketing and Corporate Sites (www.genvium.com)</h3>
-      <p>Unlike our desktop application and web application, our public website at www.genvium.com does collect certain standard technical and user-submitted data to function properly.</p>
+      <p>Similar to our web application, our public website at www.genvium.com does collect certain standard technical and user-submitted data to function properly.</p>
       
       <h4>Information You Voluntarily Provide Online</h4>
       <p>This may include contact information such as email addresses, communications and support inquiries, feedback submissions, waitlist or early-access requests, and other information voluntarily submitted directly through our website forms.</p>
@@ -1056,7 +998,7 @@
   window.addEventListener("load", () => {
     const hash = window.location.hash.slice(1);
   
-    if (hash && ["home", "install", "web", "contact"].includes(hash)) {
+    if (hash && ["home", "app", "contact"].includes(hash)) {
       showSection(hash);
     }
   });
