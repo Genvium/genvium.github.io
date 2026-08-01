@@ -141,14 +141,15 @@
     }
 
     .hero-badge {
-      display: inline-block;
+      display: block;
+      width: fit-content;
+      margin: 0 auto 24px;
       padding: 8px 14px;
       border-radius: 999px;
       background: #DBEAFE;
       color: #1D4ED8;
       font-size: 13px;
       font-weight: 600;
-      margin-bottom: 24px;
     }
 
     .hero h1 {
@@ -411,6 +412,18 @@
       text-decoration: underline;
     }
 
+    .preview-image {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .preview-image img {
+      width: 400px;
+      height: 400px;
+      border-radius: 12px;
+    }
+
     /* ── Legal pages ── */
     .legal {
       max-width: 900px;
@@ -650,20 +663,29 @@
     </section>
   </div>
 
-  <!-- Genvium App -->
+  <!-- Genvium App Page -->
   <div id="app" class="panel">
     <section class="section">
-      <div class="hero-badge">Genvium is completely Free!</div>
+      <div class="hero-badge">Genvium is completely Free!</div></center>
       <h2 class="section-title">Genvium</h2>
       <p class="section-subtitle">Access Genvium through the web.</p>
 
       <div class="download-card">
         <h3>Genvium App</h3>
-        <a href="https://webapp.genvium.com" target="_blank">Launch Genvium</a>
+        <a href="https://webapp.genvium.com" target="_blank">Open Genvium</a>
+      </div>
+
+      <div class="preview-image">
+        <img
+          src="genvium-preview-welcomepage.png"
+          alt="Preview of the Genvium dashboard"
+          width="400"
+          height="400">
       </div>
     </section>
   </div>
 
+  <!-- Contact Page -->
   <div id="contact" class="panel">
     <section class="section">
       <h2 class="section-title">Contact us</h2>
@@ -683,6 +705,7 @@
     </section>
   </div>
 
+  <!-- Legal -->
   <div id="product-terms" class="panel">
     <div class="legal">
       <h1>Genvium Product Terms</h1>
