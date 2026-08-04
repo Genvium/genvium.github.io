@@ -672,7 +672,7 @@
 
       <div class="download-card">
         <h3>Genvium App</h3>
-        <a href="https://webapp.genvium.com" target="_blank">Open Genvium</a>
+        <a href="https://webapp.genvium.com" target="_blank" onclick="trackWebappClick()">Open Genvium</a>
       </div>
 
       <div class="preview-image">
@@ -1006,8 +1006,11 @@
 </footer>
 
 <script>
-  function trackDownload(os) {
-    gtag('event', 'download', { os: os });
+  function trackWebappClick() {
+      gtag('event', 'open_webapp', { 
+        event_category: 'engagement',
+        event_label: 'Web App Link'
+      });
   }
 
   function showSection(id) {
