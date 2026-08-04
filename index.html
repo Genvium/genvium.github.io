@@ -412,16 +412,148 @@
       text-decoration: underline;
     }
 
-    .preview-image {
-      display: flex;
-      justify-content: center;
-      margin-top: 24px;
+    /* ── Genvium App Showcase ── */
+    
+    .app-showcase {
+      margin-top: 70px;
     }
-
-    .preview-image img {
-      width: 500px;
-      height: 400px;
-      border-radius: 12px;
+    
+    .app-preview {
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.12),
+        0 8px 20px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+    
+    .app-preview:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 30px 70px rgba(15, 23, 42, 0.15),
+        0 10px 25px rgba(15, 23, 42, 0.07);
+    }
+    
+    .app-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
+    
+    .app-preview-large {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .app-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 28px;
+    }
+    
+    .app-caption {
+      padding: 20px 8px 8px;
+    }
+    
+    .app-caption h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #0F172A;
+    }
+    
+    .app-caption p {
+      color: #64748B;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    /* App showcase intro */
+    
+    .app-intro {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    
+    .app-intro h2 {
+      font-size: 52px;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      color: #0F172A;
+      margin-bottom: 20px;
+    }
+    
+    .app-intro p {
+      font-size: 19px;
+      color: #4B5563;
+      line-height: 1.7;
+    }
+    
+    .app-intro .hero-badge {
+      margin-bottom: 24px;
+    }
+    
+    .app-action {
+      margin-top: 32px;
+    }
+    
+    /* Section between screenshots */
+    
+    .app-section-heading {
+      text-align: center;
+      margin: 90px auto 45px;
+      max-width: 700px;
+    }
+    
+    .app-section-heading h3 {
+      font-size: 34px;
+      letter-spacing: -1px;
+      color: #0F172A;
+      margin-bottom: 12px;
+    }
+    
+    .app-section-heading p {
+      color: #64748B;
+      font-size: 17px;
+    }
+    
+    /* Mobile */
+    
+    @media (max-width: 768px) {
+    
+      .app-intro h2 {
+        font-size: 40px;
+      }
+    
+      .app-intro p {
+        font-size: 17px;
+      }
+    
+      .app-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    
+      .app-preview {
+        border-radius: 18px;
+        padding: 8px;
+      }
+    
+      .app-preview img {
+        border-radius: 11px;
+      }
+    
+      .app-section-heading {
+        margin-top: 65px;
+      }
+    
+      .app-section-heading h3 {
+        font-size: 28px;
+      }
     }
 
     /* ── Legal pages ── */
@@ -663,28 +795,124 @@
     </section>
   </div>
 
+  
   <!-- Genvium App Page -->
   <div id="app" class="panel">
     <section class="section">
-      <div class="hero-badge">Genvium is completely Free!</div></center>
-      <h2 class="section-title">Genvium</h2>
-      <p class="section-subtitle">Access Genvium through the web.</p>
-
-      <div class="download-card">
-        <h3>Genvium App</h3>
-        <a href="https://webapp.genvium.com" target="_blank" onclick="trackWebappClick()">Open Genvium</a>
+      <!-- Intro -->
+      <div class="app-intro">
+        <div class="hero-badge">
+          Genvium is completely Free!
+        </div>
+        <h2>Meet Genvium</h2>
+        <p>Your centralized workspace for discovering, organizing, and pursuing startup funding opportunities.</p>
+        <div class="app-action">
+          <a
+            href="https://webapp.genvium.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="trackWebappClick()"
+            class="btn-primary">
+            Open Genvium →
+          </a>
+        </div>
       </div>
-
-      <div class="preview-image">
-        <img
-          src="genvium-preview-welcomepage.png"
-          alt="Preview of the Genvium dashboard"
-          width="500"
-          height="400">
+      <!-- Product showcase introduction -->
+      <div class="app-section-heading">
+        <h3>See Genvium in action</h3>
+        <p>From discovering opportunities to managing applications, Genvium gives founders one place to keep their funding workflow organized.</p>
+      </div>
+      <!-- Dashboard -->
+      <div class="app-preview-large">
+        <div class="app-preview">
+          <img
+            src="Genvium-App-Dashboard.png"
+            alt="Genvium dashboard showing active applications, funding secured, upcoming deadlines, and recommended opportunities">
+        </div>
+        <div class="app-caption">
+          <h3>Your funding command center</h3>
+          <p>Keep your applications, funding progress, deadlines, and recommended opportunities visible from one dashboard.</p>
+        </div>
+      </div>
+      <!-- Applications + Readiness -->
+      <div class="app-preview-grid">
+        <!-- My Applications -->
+        <div>
+          <div class="app-preview">
+            <img
+              src="Genvium-App-MyApplications.png"
+              alt="Genvium My Applications page showing application statuses, amounts, and deadlines">
+          </div>
+          <div class="app-caption">
+            <h3>Manage your applications</h3>
+            <p>Track applications, statuses, funding amounts, deadlines, and next steps in one organized workspace.</p>
+          </div>
+        </div>
+        <!-- Readiness -->
+        <div>
+          <div class="app-preview">
+            <img
+              src="Genvium-App-Readiness.png"
+              alt="Genvium application readiness page showing completed and missing requirements">
+          </div>
+          <div class="app-caption">
+            <h3>Know when you're ready</h3>
+            <p>See which application requirements are complete and identify what still needs attention before you apply.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Genvium AI -->
+      <div class="app-section-heading">
+        <h3>Built-in AI assistance</h3>
+        <p>Get AI-assisted help while preparing your applications, while keeping control over the final submission.</p>
+      </div>
+      <div class="app-preview-large">
+        <div class="app-preview">
+          <img
+            src="Genvium-AI.png"
+            alt="Genvium AI grant draft assistant">
+        </div>
+        <div class="app-caption">
+          <h3>Get AI-assisted application help</h3>
+          <p>Generate and refine application content with Genvium AI while reviewing every draft before submission.</p>
+        </div>
+      </div>
+      <!-- Help -->
+      <div class="app-section-heading">
+        <h3>Help when you need it</h3>
+        <p>Find answers and guidance while working through the Genvium platform.</p>
+      </div>
+      <div class="app-preview-large">
+        <div class="app-preview">
+          <img
+            src="Genvium-Help.png"
+            alt="Genvium Help page with searchable funding and application guidance">
+        </div>
+        <div class="app-caption">
+          <h3>A workspace designed to keep you moving</h3>
+          <p>Genvium brings funding discovery, application management, readiness tracking, AI assistance, and support together in one place.</p>
+        </div>
+      </div>
+      <!-- Final CTA -->
+      <div class="cta-section" style="margin-top: 90px;">
+        <h2>Ready to explore Genvium?</h2>
+        <p>Start discovering opportunities and organizing your funding workflow today.</p>
+  
+        <div class="cta-buttons">
+          <a
+            href="https://webapp.genvium.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="trackWebappClick()"
+            class="btn-primary">
+            Open Genvium →
+          </a>
+        </div>
       </div>
     </section>
   </div>
 
+  
   <!-- Contact Page -->
   <div id="contact" class="panel">
     <section class="section">
