@@ -68,7 +68,12 @@
       color: #111827;
       line-height: 1.6;
     }
-
+    /* logo styling - header(body) */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
     /* Skip to content link styling */
     .skip-link {
       position: absolute;
@@ -676,8 +681,10 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
-  <img src="/logo.png" width="32" height="32" alt="Genvium logo">
-  <div class="logo">Genvium</div>
+  <div class="brand">
+    <img src="/logo.png" width="32" height="32" alt="Genvium logo">
+    <div class="logo">Genvium</div>
+  </div>
   <nav>
     <button class="link-btn" onclick="showSection('home')">Home</button>
     <button class="link-btn" onclick="showSection('app')">Genvium App</button>
