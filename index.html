@@ -21,8 +21,18 @@
   <meta name="twitter:url" content="https://www.genvium.com/" />
   <meta name="twitter:title" content="Genvium | Startup Funding Intelligence" />
   <meta name="twitter:description" content="Discover, organize, and track startup funding opportunities from a single, centralized platform." />
-  
 
+  <!-- 1. Load consent.js FIRST -->
+  <script src="/consent.js"></script>
+
+  <!-- 2. Set Consent Mode default BEFORE gtag.js loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', AZConsent.gtagDefaults);
+  </script>
+
+  <!-- 3. THEN load gtag.js as before -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B9XYFVLCV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -1242,6 +1252,8 @@
     <button class="link-btn" onclick="showSection('licenses')">Software Notices</button>
     <button class="link-btn" onclick="showSection('accessibility')">Accessibility</button>
   </div>
+
+  <button class="link-btn" onclick="AZConsent.open()">Privacy Choices</button>
 </footer>
 
 <script>
