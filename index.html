@@ -632,6 +632,17 @@
       color: #2563EB;
     }
 
+    /* -- Ads -- */
+    .zawadi-slot { 
+      display: flex; 
+      justify-content: center; 
+      margin: 48px auto; 
+      padding: 0 16px; 
+    }
+    .zawadi-slot:has(ins[data-zawadi-empty]) { 
+      display: none; 
+    }
+
     /* ── Footer ── */
     footer {
       background: #0081B3;
@@ -780,6 +791,10 @@
         the funding discovery process. Our database is a one stop shop for most of your funding needs. Grants, Tax Credits, Accelerator programs, etc.
         We've aggregated over <b>3000</b> different funding opportunities all over the world. 
       </p>
+
+      <div class="zawadi-slot">
+        <ins class="zawadi-ad" data-site="genvium" data-slot="home-mid" data-size="300x250"></ins>
+      </div>
 
       <div class="workflow">
         <div class="workflow-step">
@@ -1280,6 +1295,7 @@
     }
   });
 </script>
+<script src="https://ads.auduvanttechnologies.com/v1/loader.js" async></script>
 
 </body>
 </html>
