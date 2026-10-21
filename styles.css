@@ -521,6 +521,57 @@
     display: none; 
   }
 
+  /* ── Legal pages (legal/privacy.html, terms.html, software-notices.html) ── */
+  .legal {
+    max-width: 900px;
+    margin: auto;
+    padding: 70px 40px;
+    overflow-wrap: anywhere;
+  }
+
+  .legal h1 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+    color: #0F172A;
+  }
+
+  .legal .last-updated {
+    font-size: 14px;
+    color: #6B7280;
+    margin-bottom: 40px;
+  }
+
+  .legal h2 {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #111827;
+  }
+
+  .legal h3 {
+    font-size: 17px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: #374151;
+  }
+
+  .legal p {
+    color: #4B5563;
+    margin-bottom: 12px;
+  }
+
+  .legal ul {
+    color: #4B5563;
+    padding-left: 22px;
+    margin-bottom: 12px;
+    line-height: 1.9;
+  }
+
+  .legal a {
+    color: #2563EB;
+  }
+
   /* ── Footer ── */
   footer {
     background: #0081B3;
@@ -571,5 +622,14 @@
 
     .cta-section h2 {
       font-size: 40px;
+    }
+
+    .legal {
+      padding: 40px 20px;
+    }
+
+    .legal h1 {
+      font-size: 32px;
+      letter-spacing: -1px;
     }
   }
