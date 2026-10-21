@@ -509,65 +509,7 @@
       font-size: 28px;
     }
   }
-
-  /* ── Legal pages ── */
-  .legal {
-    max-width: 900px;
-    margin: auto;
-    padding: 70px 40px;
-  }
-
-  .legal h1 {
-    font-size: 42px;
-    letter-spacing: -1.5px;
-    margin-bottom: 8px;
-    color: #0F172A;
-  }
-
-  .legal .last-updated {
-    font-size: 14px;
-    color: #6B7280;
-    margin-bottom: 40px;
-  }
-
-  .legal h2 {
-    font-size: 22px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    color: #111827;
-  }
-
-  .legal h3 {
-    font-size: 17px;
-    margin-top: 24px;
-    margin-bottom: 8px;
-    color: #374151;
-  }
-
-  /* Added styling to support h4 tags brought over from the Auduvant policy */
-  .legal h4 {
-    font-size: 15px;
-    margin-top: 20px;
-    margin-bottom: 6px;
-    color: #374151;
-  }
-
-  .legal p {
-    color: #4B5563;
-    margin-bottom: 12px;
-  }
-
-  .legal ul {
-    color: #4B5563;
-    padding-left: 22px;
-    margin-bottom: 12px;
-    line-height: 1.9;
-  }
-
-  .legal a {
-    color: #2563EB;
-  }
-
+    
   /* -- Ads -- */
   .zawadi-slot { 
     display: flex; 
@@ -598,6 +540,7 @@
     color: white;
     margin: 0 10px;
     opacity: 0.85;
+    text-decoration: none;
   }
 
   footer .link-btn:hover {
